@@ -1,42 +1,46 @@
 <?php
 
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-
-// This is the main Web application configuration. Any writable
-// CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name' => 'Свадебный',
 
-	// preloading 'log' component
 	'preload'=>array('log'),
 
-	// autoloading model and component classes
+    'language' => 'ru',
+    'sourceLanguage' => 'ru_ru',
+    'charset' => 'utf-8',
+
+    //'defaultController' => 'parser',
+
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        //'application.extensions.email.*',
 	),
 
-	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		/*
-		'gii'=>array(
-			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
-		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
-		),
-		*/
-	),
-
-	// application components
 	'components'=>array(
 		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin' => true,
+            'loginUrl' => array('users/login'),
 		),
-		// uncomment the following to enable URLs in path-format
+        'cache' => array(
+            'class' => 'system.caching.CFileCache',
+        ),
+
+        'email'=>array(
+            'class'=>'application.extensions.email.Email',
+            'delivery'=>'php', //Will use the php mailing function.
+            //May also be set to 'debug' to instead dump the contents of the email into the view
+        ),
+
+        'authManager' => array(
+            // Будем использовать свой менеджер авторизации
+            'class' => 'PhpAuthManager',
+            // Роль по умолчанию. Все, кто не админы, модераторы и юзеры — гости.
+            'defaultRoles' => array('guest'),
+            'showErrors' => YII_DEBUG,
+        ),
+
 		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
@@ -47,23 +51,22 @@ return array(
 			),
 		),
 		*/
+				
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
-		// uncomment the following to use a MySQL database
-		/*
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;dbname=wedding',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '123',
 			'charset' => 'utf8',
+            'queryCachingDuration'=>true,
+            'autoConnect' => false,
+            'schemaCachingDuration' => 3600,
 		),
-		*/
+		
 		'errorHandler'=>array(
-			// use 'site/error' action to display errors
-            'errorAction'=>'site/error',
+            'errorAction'=>'front/error',
         ),
+        
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -71,20 +74,40 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
+                array(
+                    'class' => 'CWebLogRoute',
+                    'showInFireBug' => true, // firefox & chrome
+                ), 
 			),
 		),
+	
 	),
 
-	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
-	'params'=>array(
-		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+    'modules'=>array(
+        'gii'=>array(
+            'class'=>'system.gii.GiiModule',
+            'password'=>false,
+        ),
+    ),
+
+	'params' => array(
+		'adminEmail' => 'dimanok88@gmail.com',
+
+        'uploadDir' => '/resources/upload/',
+
+        'imgThumbWidth' => '200',
+        'imgThumbHeight' => '150',
+        'imgWidth' => '480',
+        'imgHeight' => '320',
+
+        'countItemsByPage' => '50',
+        'countNewsByPage' => '2',
+        'countNewsForIndex' => '3',
+
+        'cacheListTime' => '1',
+
+        'shortName' => 'Свадебный',
 	),
+
 );
+
