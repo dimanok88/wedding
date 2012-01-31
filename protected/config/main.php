@@ -88,6 +88,7 @@ return array(
             'class'=>'system.gii.GiiModule',
             'password'=>false,
         ),
+        'contedit',
     ),
 
 	'params' => array(
