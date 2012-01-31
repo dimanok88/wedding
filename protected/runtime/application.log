@@ -1,0 +1,227 @@
+2012/01/30 12:17:41 [error] [php] include(WebUser.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/framework/YiiBase.php:418)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/YiiBase.php(198): import()
+#1 /home/nike/webprojects/wedding/framework/base/CModule.php(387): createComponent()
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(104): CWebApplication->getComponent()
+#3 /home/nike/webprojects/wedding/www/protected/config/main.php(119): CWebApplication->__get()
+#4 unknown(0): beginRequest()
+#5 /home/nike/webprojects/wedding/framework/base/CComponent.php(549): call_user_func()
+#6 /home/nike/webprojects/wedding/framework/base/CApplication.php(189): CWebApplication->raiseEvent()
+#7 /home/nike/webprojects/wedding/framework/base/CApplication.php(161): CWebApplication->onBeginRequest()
+#8 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/contact
+in /home/nike/webprojects/wedding/www/protected/config/main.php (119)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/01/30 12:18:15 [error] [php] include(WebUser.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/framework/YiiBase.php:418)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/YiiBase.php(198): import()
+#1 /home/nike/webprojects/wedding/framework/base/CModule.php(387): createComponent()
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(104): CWebApplication->getComponent()
+#3 /home/nike/webprojects/wedding/www/protected/views/site/contact.php(10): CWebApplication->__get()
+#4 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require()
+#5 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#6 /home/nike/webprojects/wedding/framework/web/CController.php(870): SiteController->renderFile()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(783): SiteController->renderPartial()
+#8 /home/nike/webprojects/wedding/www/protected/controllers/SiteController.php(66): SiteController->render()
+#9 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): SiteController->actionContact()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(287): SiteController->runAction()
+#12 /home/nike/webprojects/wedding/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): SiteController->run()
+#14 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#15 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/contact
+in /home/nike/webprojects/wedding/www/protected/views/site/contact.php (10)
+in /home/nike/webprojects/wedding/www/protected/controllers/SiteController.php (66)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/01/30 16:10:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "parser".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/
+---
+2012/01/30 16:11:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "parser".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/
+---
+2012/01/31 16:18:44 [error] [php] require(/home/nike/webprojects/wedding/www/protected/modules/contedit/config/admin.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php:10)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/YiiBase.php(208): ConteditModule->__construct()
+#1 /home/nike/webprojects/wedding/framework/base/CModule.php(283): createComponent()
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(331): CWebApplication->getModule()
+#3 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController()
+#4 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php (10)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php (10)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/01/31 16:19:21 [error] [php] require(/home/nike/webprojects/wedding/www/protected/modules/contedit//./config/admin.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php:10)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/YiiBase.php(208): ConteditModule->__construct()
+#1 /home/nike/webprojects/wedding/framework/base/CModule.php(283): createComponent()
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(331): CWebApplication->getModule()
+#3 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController()
+#4 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php (10)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php (10)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/01/31 16:20:26 [error] [exception.CException] exception 'CException' with message 'Свойство "ConteditModule.name" доступно только для чтения.' in /home/nike/webprojects/wedding/framework/base/CComponent.php:171
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/base/CModule.php(483): CComponent->__set('name', '???????????????...')
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php(11): CModule->configure(Array)
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(91): ConteditModule->init()
+#3 /home/nike/webprojects/wedding/framework/YiiBase.php(208): CModule->__construct('contedit', NULL, Array)
+#4 /home/nike/webprojects/wedding/framework/base/CModule.php(283): YiiBase::createComponent('contedit.Conted...', 'contedit', NULL, Array)
+#5 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(331): CModule->getModule('contedit')
+#6 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController('contedit')
+#7 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit')
+#8 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=contedit
+---
+2012/01/31 16:20:55 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "ConteditModule.language".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:174
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/base/CModule.php(483): CComponent->__set('language', 'ru')
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php(11): CModule->configure(Array)
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(91): ConteditModule->init()
+#3 /home/nike/webprojects/wedding/framework/YiiBase.php(208): CModule->__construct('contedit', NULL, Array)
+#4 /home/nike/webprojects/wedding/framework/base/CModule.php(283): YiiBase::createComponent('contedit.Conted...', 'contedit', NULL, Array)
+#5 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(331): CModule->getModule('contedit')
+#6 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController('contedit')
+#7 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit')
+#8 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=contedit
+---
+2012/01/31 16:20:56 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "ConteditModule.language".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:174
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/base/CModule.php(483): CComponent->__set('language', 'ru')
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php(11): CModule->configure(Array)
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(91): ConteditModule->init()
+#3 /home/nike/webprojects/wedding/framework/YiiBase.php(208): CModule->__construct('contedit', NULL, Array)
+#4 /home/nike/webprojects/wedding/framework/base/CModule.php(283): YiiBase::createComponent('contedit.Conted...', 'contedit', NULL, Array)
+#5 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(331): CModule->getModule('contedit')
+#6 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController('contedit')
+#7 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit')
+#8 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=contedit
+---
+2012/01/31 16:20:57 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "ConteditModule.language".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:174
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/base/CModule.php(483): CComponent->__set('language', 'ru')
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php(11): CModule->configure(Array)
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(91): ConteditModule->init()
+#3 /home/nike/webprojects/wedding/framework/YiiBase.php(208): CModule->__construct('contedit', NULL, Array)
+#4 /home/nike/webprojects/wedding/framework/base/CModule.php(283): YiiBase::createComponent('contedit.Conted...', 'contedit', NULL, Array)
+#5 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(331): CModule->getModule('contedit')
+#6 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController('contedit')
+#7 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit')
+#8 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=contedit
+---
+2012/01/31 16:22:20 [error] [php] require(/home/nike/webprojects/wedding/www/protected/modules/contedit/config/../main.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/www/protected/modules/contedit/config/admin.php:4)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/base/CModule.php(91): ConteditModule->init()
+#1 /home/nike/webprojects/wedding/framework/YiiBase.php(208): ConteditModule->__construct()
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(283): createComponent()
+#3 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(331): CWebApplication->getModule()
+#4 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController()
+#5 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#6 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#7 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/config/admin.php (4)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/config/admin.php (4)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/ConteditModule.php (10)
+2012/01/31 16:33:15 [error] [php] include(ContController.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/framework/YiiBase.php:418)
+Stack trace:
+#0 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(4): spl_autoload_call()
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(344): require()
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(332): CWebApplication->createController()
+#3 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(270): CWebApplication->createController()
+#4 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/item/page&view=about
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php (4)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/01/31 16:34:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "page".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('page')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('page')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/item/p...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/item/page&view=about
+HTTP_REFERER=http://wedding/index.php?r=contedit
+---
+2012/01/31 16:34:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "contact".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('contact')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('contact')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/item/c...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/item/contact
+HTTP_REFERER=http://wedding/index.php?r=contedit
+---
+2012/01/31 16:34:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "page".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('page')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('page')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/item/p...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/item/page&view=about
+HTTP_REFERER=http://wedding/index.php?r=contedit
+---
+2012/01/31 16:43:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "item".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('item')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('item')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/defaul...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/default/item
+---
+2012/01/31 16:43:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "users/login".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('users/login')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users/login
+HTTP_REFERER=http://wedding/index.php?r=contedit/item
+---
+2012/01/31 16:45:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "item".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('item')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('item')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/defaul...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/default/item
+---

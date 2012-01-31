@@ -9,6 +9,7 @@ return array(
     'language' => 'ru',
     'sourceLanguage' => 'ru_ru',
     'charset' => 'utf-8',
+    'layout'=> 'column2',
 
     //'defaultController' => 'parser',
 
@@ -21,7 +22,7 @@ return array(
 	'components'=>array(
 		'user'=>array(
 			'allowAutoLogin' => true,
-            'loginUrl' => array('users/login'),
+            'loginUrl' => array('site/login'),
 		),
         'cache' => array(
             'class' => 'system.caching.CFileCache',
@@ -87,6 +88,9 @@ return array(
         'gii'=>array(
             'class'=>'system.gii.GiiModule',
             'password'=>false,
+        ),
+        'contedit'=>array(
+            'layout'=> 'column2',
         ),
     ),
 
