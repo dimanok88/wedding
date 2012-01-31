@@ -196,3 +196,32 @@ Stack trace:
 REQUEST_URI=/index.php?r=contedit/item/page&view=about
 HTTP_REFERER=http://wedding/index.php?r=contedit
 ---
+2012/01/31 16:43:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "item".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('item')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('item')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/defaul...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/default/item
+---
+2012/01/31 16:43:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "users/login".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('users/login')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users/login
+HTTP_REFERER=http://wedding/index.php?r=contedit/item
+---
+2012/01/31 16:45:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "item".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('item')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('item')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/defaul...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/default/item
+---
