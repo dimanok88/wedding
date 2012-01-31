@@ -1,0 +1,53 @@
+2012/01/30 12:17:41 [error] [php] include(WebUser.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/framework/YiiBase.php:418)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/YiiBase.php(198): import()
+#1 /home/nike/webprojects/wedding/framework/base/CModule.php(387): createComponent()
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(104): CWebApplication->getComponent()
+#3 /home/nike/webprojects/wedding/www/protected/config/main.php(119): CWebApplication->__get()
+#4 unknown(0): beginRequest()
+#5 /home/nike/webprojects/wedding/framework/base/CComponent.php(549): call_user_func()
+#6 /home/nike/webprojects/wedding/framework/base/CApplication.php(189): CWebApplication->raiseEvent()
+#7 /home/nike/webprojects/wedding/framework/base/CApplication.php(161): CWebApplication->onBeginRequest()
+#8 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/contact
+in /home/nike/webprojects/wedding/www/protected/config/main.php (119)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/01/30 12:18:15 [error] [php] include(WebUser.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/framework/YiiBase.php:418)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/YiiBase.php(198): import()
+#1 /home/nike/webprojects/wedding/framework/base/CModule.php(387): createComponent()
+#2 /home/nike/webprojects/wedding/framework/base/CModule.php(104): CWebApplication->getComponent()
+#3 /home/nike/webprojects/wedding/www/protected/views/site/contact.php(10): CWebApplication->__get()
+#4 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require()
+#5 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#6 /home/nike/webprojects/wedding/framework/web/CController.php(870): SiteController->renderFile()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(783): SiteController->renderPartial()
+#8 /home/nike/webprojects/wedding/www/protected/controllers/SiteController.php(66): SiteController->render()
+#9 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): SiteController->actionContact()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(287): SiteController->runAction()
+#12 /home/nike/webprojects/wedding/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): SiteController->run()
+#14 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#15 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/contact
+in /home/nike/webprojects/wedding/www/protected/views/site/contact.php (10)
+in /home/nike/webprojects/wedding/www/protected/controllers/SiteController.php (66)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/01/30 16:10:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "parser".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/
+---
+2012/01/30 16:11:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "parser".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/
+---
