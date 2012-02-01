@@ -2,21 +2,6 @@
 
 class ItemController extends ContController
 {
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
 
 	/**
 	 * Creates a new model.
@@ -33,7 +18,7 @@ class ItemController extends ContController
 		{
 			$model->attributes=$_POST['Item'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('create',array(
@@ -57,7 +42,7 @@ class ItemController extends ContController
 		{
 			$model->attributes=$_POST['Item'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('update',array(
@@ -90,9 +75,13 @@ class ItemController extends ContController
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Item');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+		$model=new Item('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Item']))
+			$model->attributes=$_GET['Item'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
 	}
 

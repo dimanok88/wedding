@@ -5,7 +5,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Обязательные поля <span class="required">*</span>.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -28,19 +28,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'date_add'); ?>
-		<?php echo $form->textField($model,'date_add'); ?>
-		<?php echo $form->error($model,'date_add'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'active'); ?>
-		<?php echo $form->textField($model,'active'); ?>
+		<?php echo $form->checkBox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

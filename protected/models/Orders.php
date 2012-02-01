@@ -68,12 +68,12 @@ class Orders extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_user' => 'Id User',
-			'id_item' => 'Id Item',
-			'date_brony' => 'Date Brony',
-			'total_hours' => 'Total Hours',
-			'date_add' => 'Date Add',
-			'total_price' => 'Total Price',
+			'id_user' => 'Пользователь',
+			'id_item' => 'Контент',
+			'date_brony' => 'Дата бронирования',
+			'total_hours' => 'Количество часов',
+			'date_add' => 'Дата Добавления',
+			'total_price' => 'Общая сумма',
 		);
 	}
 

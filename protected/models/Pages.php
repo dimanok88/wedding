@@ -40,7 +40,7 @@ class Pages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, text, keywords, description, meta_title, active', 'required'),
+			array('title, text, active', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>50),
 			array('keywords, description', 'length', 'max'=>160),
@@ -69,12 +69,12 @@ class Pages extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'text' => 'Text',
-			'keywords' => 'Keywords',
-			'description' => 'Description',
-			'meta_title' => 'Meta Title',
-			'active' => 'Active',
+			'title' => 'Заголовок',
+			'text' => 'Текст',
+			'keywords' => 'Ключевые слова',
+			'description' => 'Описание',
+			'meta_title' => 'Мета заголовок',
+			'active' => 'Вкл.',
 		);
 	}
 

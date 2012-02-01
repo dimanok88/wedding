@@ -29,18 +29,15 @@
 		<?php $this->widget('application.extensions.mbmenu.MbMenu',array(
 			'items'=>array(
 				array('label'=>'Главная', 'url'=>array('')),
-				array('label'=>'About', 'url'=>array('item/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('item/contact')),
-				array('label'=>'Login', 'url'=>array('item/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Контент', 'url'=>array('item/')),
+                array('label'=>'Страницы', 'url'=>array('pages/')),
+				array('label'=>'Пользователи', 'url'=>array('users/')),
+                array('label'=>'Бронирование', 'url'=>array('orders/')),
+				//array('label'=>'Login', 'url'=>array('item/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
 
 	<?php echo $content; ?>
 

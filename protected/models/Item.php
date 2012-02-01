@@ -39,7 +39,7 @@ class Item extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, description, price, date_add, active', 'required'),
+			array('name, description, price, active', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
 			array('name', 'length', 'max'=>60),
@@ -60,6 +60,14 @@ class Item extends CActiveRecord
 		);
 	}
 
+    public function beforeSave() {
+	    if ($this->isNewRecord) {
+	        $this->date_add = time();
+	    }
+
+	    return parent::beforeSave();
+	}
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -67,11 +75,11 @@ class Item extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'description' => 'Description',
-			'price' => 'Price',
-			'date_add' => 'Date Add',
-			'active' => 'Active',
+			'name' => 'Название',
+			'description' => 'Описание',
+			'price' => 'Цена за час',
+			'date_add' => 'Дата добавления',
+			'active' => 'Вкл.',
 		);
 	}
 
