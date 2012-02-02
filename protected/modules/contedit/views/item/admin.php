@@ -29,6 +29,23 @@ $this->menu=array(
             'header'=>'Действия',
 			'class'=>'CButtonColumn',
             'template' => '{update} {delete}',
+            'buttons'=>array
+             (
+                'delete' => array
+                (
+                    'label'=>'Удалить',
+                    'url'=>'Yii::app()->createUrl("contedit/item/delete", array("id"=>$data->id))',
+                ),
+                'update'=>array(
+                   'label'=>'Редактировать',
+                   'url'=>'Yii::app()->createUrl("contedit/item/create", array("id"=>$data->id))',
+                ),
+                /*'update' => array
+                (
+                    'label'=>'Update',
+                    'url'=>'Yii::app()->createUrl("item/upnew", array("id"=>$data->id, "type"=>"tire"))',
+                ),*/
+            ),
 		),
 	),
 )); ?>

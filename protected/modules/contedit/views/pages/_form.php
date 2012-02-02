@@ -17,7 +17,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'text'); ?>
-		<?php echo $form->textArea($model,'text',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.fckeditor.FCKEditorWidget',array(
+                "model"=>$model,                # Data-Model
+                "attribute"=>'text',         # Attribute in the Data-Model
+                "height"=>'400px',
+                "width"=>'100%',
+                "fckeditor"=>Yii::app()->basePath."/fckeditor/fckeditor.php",
+                "fckBasePath"=>Yii::app()->baseUrl."/fckeditor/",
+                "config" => array("EditorAreaCSS"=>Yii::app()->baseUrl.'/css/index.css',),
+            ) ); ?>
 		<?php echo $form->error($model,'text'); ?>
 	</div>
 
