@@ -31,6 +31,14 @@ class Users extends CActiveRecord
 		return 'users';
 	}
 
+    public function beforeSave() {
+	    if ($this->isNewRecord) {
+	        $this->date_reg = time();
+	    }
+
+	    return parent::beforeSave();
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -39,7 +47,10 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, fast_name, phone, email, date_reg', 'required'),
+			array('name, fast_name, phone, email', 'required'),
+            array('phone, email', 'unique'),
+            array('email', 'email'),
+            array('phone', 'match', 'pattern' => '!9[0-9]{9}!u'),
 			array('name, fast_name', 'length', 'max'=>40),
 			array('phone', 'length', 'max'=>11),
 			array('email', 'length', 'max'=>50),
@@ -67,11 +78,11 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'fast_name' => 'Fast Name',
-			'phone' => 'Phone',
-			'email' => 'Email',
-			'date_reg' => 'Date Reg',
+			'name' => 'Имя',
+			'fast_name' => 'Фамилия',
+			'phone' => 'Телфон',
+			'email' => 'E-mail',
+			'date_reg' => 'Дата регистрации',
 		);
 	}
 
@@ -97,4 +108,28 @@ class Users extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function getName($id)
+    {
+        $user = $this->findByPk($id);
+        $name = $user['name']." (".$user['phone'].")";
+        return $name;
+    }
+
+    public function getDate($time)
+    {
+        $time = date('Y-m-d H:i:s', $time);
+        return $time;
+    }
+
+    public function AllUsers()
+    {
+        $users = $this->findAll();
+        $new_list_users = array();
+        foreach($users as $user){
+            $new_list_users[$user['id']] = $user['name']."(".$user['phone'].")";
+        }
+
+        return $new_list_users;
+    }
 }

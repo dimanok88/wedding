@@ -345,3 +345,85 @@ REQUEST_URI=/index.php?r=contedit/pages/create&id=1
 in /home/nike/webprojects/wedding/www/protected/extensions/fckeditor/views/fCKEditorWidget.php (33)
 in /home/nike/webprojects/wedding/www/protected/extensions/fckeditor/views/fCKEditorWidget.php (33)
 in /home/nike/webprojects/wedding/www/protected/extensions/fckeditor/FCKEditorWidget.php (81)
+2012/02/02 15:13:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "view".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('view')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('view')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/users/...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/users/view&id=1
+HTTP_REFERER=http://wedding/index.php?r=contedit/users/update&id=1
+---
+2012/02/02 16:38:11 [error] [exception.CException] exception 'CException' with message 'В классе Users и его поведениях не найден метод или замыкание с именем "AllItems".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(226): CComponent->__call('AllItems', Array)
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/orders/_form.php(20): CActiveRecord->__call('AllItems', Array)
+#2 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/orders/_form.php(20): Users->AllItems()
+#3 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require('/home/nike/webp...')
+#4 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/nike/webp...', Array, true)
+#5 /home/nike/webprojects/wedding/framework/web/CController.php(870): CBaseController->renderFile('/home/nike/webp...', Array, true)
+#6 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/orders/create.php(15): CController->renderPartial('_form', Array)
+#7 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require('/home/nike/webp...')
+#8 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/nike/webp...', Array, true)
+#9 /home/nike/webprojects/wedding/framework/web/CController.php(870): CBaseController->renderFile('/home/nike/webp...', Array, true)
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#11 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(38): CController->render('create', Array)
+#12 [internal function]: OrdersController->actionCreate('')
+#13 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#14 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#22 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#24 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#25 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders
+---
+2012/02/02 16:47:13 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Orders.date_reg".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(144): CComponent->__get('date_reg')
+#1 /home/nike/webprojects/wedding/framework/base/CComponent.php(607) : eval()'d code(1): CActiveRecord->__get('date_reg')
+#2 /home/nike/webprojects/wedding/framework/base/CComponent.php(607): eval()
+#3 /home/nike/webprojects/wedding/framework/zii/widgets/grid/CDataColumn.php(139): CComponent->evaluateExpression('Users::model()-...', Array)
+#4 /home/nike/webprojects/wedding/framework/zii/widgets/grid/CGridColumn.php(138): CDataColumn->renderDataCellContent(0, Object(Orders))
+#5 /home/nike/webprojects/wedding/framework/zii/widgets/grid/CGridView.php(517): CGridColumn->renderDataCell(0)
+#6 /home/nike/webprojects/wedding/framework/zii/widgets/grid/CGridView.php(490): CGridView->renderTableRow(0)
+#7 /home/nike/webprojects/wedding/framework/zii/widgets/grid/CGridView.php(400): CGridView->renderTableBody()
+#8 /home/nike/webprojects/wedding/framework/zii/widgets/CBaseListView.php(158): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /home/nike/webprojects/wedding/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#11 /home/nike/webprojects/wedding/framework/zii/widgets/CBaseListView.php(126): CBaseListView->renderContent()
+#12 /home/nike/webprojects/wedding/framework/web/CBaseController.php(174): CBaseListView->run()
+#13 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/orders/admin.php(37): CBaseController->widget('zii.widgets.gri...', Array)
+#14 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require('/home/nike/webp...')
+#15 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/nike/webp...', Array, true)
+#16 /home/nike/webprojects/wedding/framework/web/CController.php(870): CBaseController->renderFile('/home/nike/webp...', Array, true)
+#17 /home/nike/webprojects/wedding/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#18 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(73): CController->render('admin', Array)
+#19 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): OrdersController->actionIndex()
+#20 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#22 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#23 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#24 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#25 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#27 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('')
+#29 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders')
+#30 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#31 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/index.php?r=contedit/orders
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/view&id=1
+---

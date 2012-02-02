@@ -105,4 +105,22 @@ class Item extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function getItem($id)
+    {
+        $item = $this->findByPk($id);
+        $name = $item['name']." (".$item['price']." р.)";
+        return $name;
+    }
+
+    public function AllItems()
+    {
+        $items = $this->findAll();
+        $new_list_items = array();
+        foreach($items as $item){
+            $new_list_items[$item['id']] = $item['name']."(".$item['price'].")";
+        }
+
+        return $new_list_items;
+    }
 }

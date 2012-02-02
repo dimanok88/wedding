@@ -11,19 +11,32 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_user'); ?>
-		<?php echo $form->textField($model,'id_user'); ?>
+		<?php echo $form->DropDownList($model,'id_user', Users::model()->AllUsers()); ?>
 		<?php echo $form->error($model,'id_user'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_item'); ?>
-		<?php echo $form->textField($model,'id_item'); ?>
+		<?php echo $form->DropDownList($model,'id_item', Item::model()->AllItems()); ?>
 		<?php echo $form->error($model,'id_item'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_brony'); ?>
-		<?php echo $form->textField($model,'date_brony'); ?>
+		<?$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+					'model'=>$model,
+				    'language'=>'ru',
+					'attribute'=>'date_brony',
+				    'options'=>array(
+				        'showAnim'=>'fold',
+				        'dateFormat'=>'yy-mm-dd',
+				    ),
+				    'htmlOptions'=>array(
+				        'style'=>'height:20px;',
+				        'autocomplete'=>'off'
+				    ),
+				));
+		?>
 		<?php echo $form->error($model,'date_brony'); ?>
 	</div>
 
@@ -33,20 +46,8 @@
 		<?php echo $form->error($model,'total_hours'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'date_add'); ?>
-		<?php echo $form->textField($model,'date_add'); ?>
-		<?php echo $form->error($model,'date_add'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'total_price'); ?>
-		<?php echo $form->textField($model,'total_price'); ?>
-		<?php echo $form->error($model,'total_price'); ?>
-	</div>
-
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

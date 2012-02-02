@@ -32,6 +32,14 @@ class Orders extends CActiveRecord
 		return 'orders';
 	}
 
+    public function beforeSave() {
+	    if ($this->isNewRecord) {
+	        $this->date_add = time();
+	    }
+
+	    return parent::beforeSave();
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -40,7 +48,7 @@ class Orders extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_user, id_item, total_hours, date_add, total_price', 'required'),
+			array('id_user, id_item, total_hours, date_brony', 'required'),
 			array('id_user, id_item, total_hours', 'numerical', 'integerOnly'=>true),
 			array('total_price', 'numerical'),
 			array('date_brony', 'safe'),

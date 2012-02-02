@@ -1,56 +1,41 @@
 <?php
-$this->breadcrumbs=array(
-	'Orders'=>array('index'),
-	'Manage',
-);
-
 $this->menu=array(
-	array('label'=>'List Orders', 'url'=>array('index')),
-	array('label'=>'Create Orders', 'url'=>array('create')),
+	array('label'=>'Забронировать', 'url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('orders-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Manage Orders</h1>
+<h1>ЗАбронированные</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+Вы можете использовать следующие операторы для поиска (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+или <b>=</b>)
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'orders-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'id_user',
-		'id_item',
-		'date_brony',
+        'id',
+		'id_user'=>array(
+            'name'=>'id_user',
+            'value'=>'Users::model()->getName($data->id_user)',
+        ),
+		'id_item'=>array(
+            'name'=>'id_item',
+            'value'=>'Item::model()->getItem($data->id_item)',
+        ),
+        'date_brony'=>array(
+            'name'=>'date_brony',
+            'value'=>'Users::model()->getDate($data->date_brony)'
+        ),
 		'total_hours',
-		'date_add',
-		/*
+		'date_add'=>array(
+            'name'=>'date_add',
+            'value'=>'Users::model()->getDate($data->date_add)'
+        ),
 		'total_price',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),
