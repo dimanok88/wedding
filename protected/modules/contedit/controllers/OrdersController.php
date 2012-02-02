@@ -21,7 +21,10 @@ class OrdersController extends ContController
 	{
 		$model=new Orders;
 
-        if(!empty($id)) $model=$this->loadModel($id);
+        if(!empty($id)) {
+            $model=$this->loadModel($id);
+            $model->date_brony = date('Y-m-d H:i:s', $model->date_brony);
+        }
         
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -29,6 +32,7 @@ class OrdersController extends ContController
 		if(isset($_POST['Orders']))
 		{
 			$model->attributes=$_POST['Orders'];
+            //$model->date_brony = date('Y-m-d H:i:s', $model->date_brony);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

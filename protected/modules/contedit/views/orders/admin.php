@@ -35,9 +35,26 @@ $this->menu=array(
             'name'=>'date_add',
             'value'=>'Users::model()->getDate($data->date_add)'
         ),
-		'total_price',
+		'total_price'=>array(
+            'name'=>'total_price',
+            'value'=>'Orders::model()->TotalPrice($data->id_item, $data->total_hours)'
+        ),
 		array(
+            'header'=>'Действия',
 			'class'=>'CButtonColumn',
+            'template' => '{view}{update} {delete}',
+            'buttons'=>array
+             (
+                'update'=>array(
+                   'label'=>'Редактировать',
+                   'url'=>'Yii::app()->createUrl("contedit/orders/create", array("id"=>$data->id))',
+                ),
+                /*'update' => array
+                (
+                    'label'=>'Update',
+                    'url'=>'Yii::app()->createUrl("item/upnew", array("id"=>$data->id, "type"=>"tire"))',
+                ),*/
+            ),
 		),
 	),
 )); ?>

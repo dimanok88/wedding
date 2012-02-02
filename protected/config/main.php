@@ -20,6 +20,7 @@ return array(
 	),
 
 	'components'=>array(
+        'dateFormatter'=>array('class'=>'CDateFormatter', 'params'=>array('ru')),
 		'user'=>array(
 			'allowAutoLogin' => true,
             'loginUrl' => array('site/login'),
@@ -65,7 +66,7 @@ return array(
 		),
 		
 		'errorHandler'=>array(
-            'errorAction'=>'front/error',
+            'errorAction'=>'site/error',
         ),
         
 		'log'=>array(

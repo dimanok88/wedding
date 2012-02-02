@@ -36,10 +36,11 @@ class Orders extends CActiveRecord
 	    if ($this->isNewRecord) {
 	        $this->date_add = time();
 	    }
+        $this->total_price = $this->TotalPrice($this->id_item, $this->total_hours);
+        $this->date_brony = CDateTimeParser::parse($this->date_brony,'yyyy-MM-dd hh:mm:ss');
 
 	    return parent::beforeSave();
 	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -51,7 +52,7 @@ class Orders extends CActiveRecord
 			array('id_user, id_item, total_hours, date_brony', 'required'),
 			array('id_user, id_item, total_hours', 'numerical', 'integerOnly'=>true),
 			array('total_price', 'numerical'),
-			array('date_brony', 'safe'),
+			//array('date_brony', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_user, id_item, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
@@ -100,6 +101,7 @@ class Orders extends CActiveRecord
 		$criteria->compare('id_user',$this->id_user);
 		$criteria->compare('id_item',$this->id_item);
 		$criteria->compare('date_brony',$this->date_brony,true);
+        $criteria->compare('date_brony_end',$this->date_brony,true);
 		$criteria->compare('total_hours',$this->total_hours);
 		$criteria->compare('date_add',$this->date_add,true);
 		$criteria->compare('total_price',$this->total_price);
@@ -108,4 +110,17 @@ class Orders extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function TotalPrice($id_item,$hour)
+    {
+        $content = Item::model()->findByPk($id_item);
+        $total = $hour * $content['price'];
+
+        return $total;
+    }
+
+    public function SuccesTime($brony, $hour)
+    {
+          
+    }
 }

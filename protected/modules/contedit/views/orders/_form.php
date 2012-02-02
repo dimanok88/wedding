@@ -23,20 +23,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_brony'); ?>
-		<?$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-					'model'=>$model,
-				    'language'=>'ru',
-					'attribute'=>'date_brony',
-				    'options'=>array(
-				        'showAnim'=>'fold',
-				        'dateFormat'=>'yy-mm-dd',
-				    ),
-				    'htmlOptions'=>array(
-				        'style'=>'height:20px;',
-				        'autocomplete'=>'off'
-				    ),
-				));
-		?>
+		<?php $this->widget('application.extensions.timepicker.timepicker', array(
+             'model'=>$model,
+             'name'=>'date_brony',
+             'options'=>array(
+               'stepMinute'=> 10,
+             ),
+           )); ?>
 		<?php echo $form->error($model,'date_brony'); ?>
 	</div>
 
