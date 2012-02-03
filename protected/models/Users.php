@@ -80,7 +80,7 @@ class Users extends CActiveRecord
 			'id' => 'ID',
 			'name' => 'Имя',
 			'fast_name' => 'Фамилия',
-			'phone' => 'Телфон',
+			'phone' => 'Телефон',
 			'email' => 'E-mail',
 			'date_reg' => 'Дата регистрации',
 		);

@@ -21,15 +21,19 @@
 
 <div class="container" id="page">
 
-	<div id="header">
+    <div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
 	<div>
 		<?php $this->widget('application.extensions.mbmenu.MbMenu',array(
 			'items'=>array(
-				array('label'=>'Главная', 'url'=>array('')),
-				array('label'=>'Контент', 'url'=>array('item/')),
+				//array('label'=>'Главная', 'url'=>array('')),
+				array('label'=>'Контент', 'url'=>array('default/'),
+                    'items'=>array(
+                         array('label' => 'Тип контента', 'url' => array('typeItem/')),
+                     ),
+                ),
                 array('label'=>'Страницы', 'url'=>array('pages/')),
 				array('label'=>'Пользователи', 'url'=>array('users/')),
                 array('label'=>'Бронирование', 'url'=>array('orders/')),

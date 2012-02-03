@@ -1,42 +1,27 @@
 <?php
 
-class OrdersController extends ContController
+class TypeItemController extends ContController
 {
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($id = '')
+	public function actionCreate($id= '')
 	{
-		$model=new Orders;
+		$model=new TypeItem;
 
         if(!empty($id)) {
             $model=$this->loadModel($id);
-            $model->date_brony = date('Y-m-d H:i:s', $model->date_brony);
         }
-        
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Orders']))
+		if(isset($_POST['TypeItem']))
 		{
-			$model->attributes=$_POST['Orders'];                       
+			$model->attributes=$_POST['TypeItem'];
 			if($model->save())
-            {
-                //$model->date_brony = date('Y-m-d H:i:s', $model->date_brony);
-				$this->redirect(array('view','id'=>$model->id));
-            }
+				$this->redirect(array('index'));
 		}
 
 		$this->render('create',array(
@@ -69,10 +54,10 @@ class OrdersController extends ContController
 	 */
 	public function actionIndex()
 	{
-		$model=new Orders('search');
+		$model=new TypeItem('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Orders']))
-			$model->attributes=$_GET['Orders'];
+		if(isset($_GET['TypeItem']))
+			$model->attributes=$_GET['TypeItem'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -84,10 +69,10 @@ class OrdersController extends ContController
 	 */
 	public function actionAdmin()
 	{
-		$model=new Orders('search');
+		$model=new TypeItem('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Orders']))
-			$model->attributes=$_GET['Orders'];
+		if(isset($_GET['TypeItem']))
+			$model->attributes=$_GET['TypeItem'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -101,7 +86,7 @@ class OrdersController extends ContController
 	 */
 	public function loadModel($id)
 	{
-		$model=Orders::model()->findByPk($id);
+		$model=TypeItem::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -113,7 +98,7 @@ class OrdersController extends ContController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='orders-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='type-item-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

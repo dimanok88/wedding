@@ -4,6 +4,7 @@ class DefaultController extends ContController
 {
 	public function actionIndex()
 	{
-		$this->render('index');
+        $type=new CActiveDataProvider('TypeItem');
+		$this->render('index',array('type'=>$type));
 	}
 }

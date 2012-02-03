@@ -1,6 +1,6 @@
 <?php
 $this->menu=array(
-	array('label'=>'Добавить', 'url'=>array('create')),
+	array('label'=>'Добавить', 'url'=>array('create', 'type'=>$_GET['type'])),
 );
 
 ?>
@@ -15,7 +15,7 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'item-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search($_GET['type']),
 	'filter'=>$model,
 	'columns'=>array(
 		'name',
@@ -38,7 +38,7 @@ $this->menu=array(
                 ),
                 'update'=>array(
                    'label'=>'Редактировать',
-                   'url'=>'Yii::app()->createUrl("contedit/item/create", array("id"=>$data->id))',
+                   'url'=>'Yii::app()->createUrl("contedit/item/create", array("id"=>$data->id,"type"=>'.$_GET['type'].'))',
                 ),
                 /*'update' => array
                 (

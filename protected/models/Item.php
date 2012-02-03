@@ -40,7 +40,7 @@ class Item extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, description, price, active', 'required'),
-			array('active', 'numerical', 'integerOnly'=>true),
+			array('active, type', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
 			array('name', 'length', 'max'=>60),
 			// The following rule is used by search().
@@ -87,12 +87,14 @@ class Item extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($type='')
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+
+
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
@@ -100,6 +102,7 @@ class Item extends CActiveRecord
 		$criteria->compare('price',$this->price);
 		$criteria->compare('date_add',$this->date_add,true);
 		$criteria->compare('active',$this->active);
+        $criteria->compare('type',$type);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

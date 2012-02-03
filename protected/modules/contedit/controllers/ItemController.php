@@ -21,8 +21,9 @@ class ItemController extends ContController
 		if(isset($_POST['Item']))
 		{
 			$model->attributes=$_POST['Item'];
+            $model->type = $_GET['type'];
 			if($model->save())
-				$this->redirect(array('index'));
+				$this->redirect(array('index', 'type'=>$_GET['type']));
 		}
 
 		$this->render('create',array(
@@ -55,7 +56,7 @@ class ItemController extends ContController
 	 */
 	public function actionIndex()
 	{
-		$model=new Item('search');
+		$model= new Item('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Item']))
 			$model->attributes=$_GET['Item'];

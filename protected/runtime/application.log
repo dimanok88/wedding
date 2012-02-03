@@ -427,3 +427,674 @@ Stack trace:
 REQUEST_URI=/index.php?r=contedit/orders
 HTTP_REFERER=http://wedding/index.php?r=contedit/orders/view&id=1
 ---
+2012/02/03 10:46:10 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Orders.date_brony_end".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:174
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(160): CComponent->__set('date_brony_end', 1329906632)
+#1 /home/nike/webprojects/wedding/www/protected/models/Orders.php(41): CActiveRecord->__set('date_brony_end', 1329906632)
+#2 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1056): Orders->beforeSave()
+#3 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(787): CActiveRecord->update(NULL)
+#4 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(37): CActiveRecord->save()
+#5 [internal function]: OrdersController->actionCreate('1')
+#6 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#7 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#8 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#18 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=1
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=1
+---
+2012/02/03 10:46:35 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Orders.date_brony_end".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(144): CComponent->__get('date_brony_end')
+#1 /home/nike/webprojects/wedding/framework/validators/CNumberValidator.php(79): CActiveRecord->__get('date_brony_end')
+#2 /home/nike/webprojects/wedding/framework/validators/CValidator.php(197): CNumberValidator->validateAttribute(Object(Orders), 'date_brony_end')
+#3 /home/nike/webprojects/wedding/framework/base/CModel.php(158): CValidator->validate(Object(Orders), NULL)
+#4 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(37): CActiveRecord->save()
+#6 [internal function]: OrdersController->actionCreate('1')
+#7 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#8 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#9 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#16 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#18 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#19 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=1
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=1
+---
+2012/02/03 10:47:26 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Orders.date_brony_end".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(144): CComponent->__get('date_brony_end')
+#1 /home/nike/webprojects/wedding/framework/validators/CNumberValidator.php(79): CActiveRecord->__get('date_brony_end')
+#2 /home/nike/webprojects/wedding/framework/validators/CValidator.php(197): CNumberValidator->validateAttribute(Object(Orders), 'date_brony_end')
+#3 /home/nike/webprojects/wedding/framework/base/CModel.php(158): CValidator->validate(Object(Orders), NULL)
+#4 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(37): CActiveRecord->save()
+#6 [internal function]: OrdersController->actionCreate('1')
+#7 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#8 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#9 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#16 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#18 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#19 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=1
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=1
+---
+2012/02/03 10:48:17 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Orders.date_brony_end".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(144): CComponent->__get('date_brony_end')
+#1 /home/nike/webprojects/wedding/framework/validators/CRequiredValidator.php(52): CActiveRecord->__get('date_brony_end')
+#2 /home/nike/webprojects/wedding/framework/validators/CValidator.php(197): CRequiredValidator->validateAttribute(Object(Orders), 'date_brony_end')
+#3 /home/nike/webprojects/wedding/framework/base/CModel.php(158): CValidator->validate(Object(Orders), NULL)
+#4 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(37): CActiveRecord->save()
+#6 [internal function]: OrdersController->actionCreate('1')
+#7 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#8 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#9 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#16 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#18 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#19 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=1
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=1
+---
+2012/02/03 10:56:56 [error] [php] include(CvarDump.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/framework/YiiBase.php:418)
+Stack trace:
+#0 /home/nike/webprojects/wedding/www/protected/models/Orders.php(127): spl_autoload_call()
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(35): Orders->SuccesTime()
+#2 unknown(0): OrdersController->actionCreate()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#4 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#5 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): OrdersController->runAction()
+#7 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): OrdersController->filterAccessControl()
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/nike/webprojects/wedding/framework/web/CController.php(266): OrdersController->runActionWithFilters()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): OrdersController->run()
+#14 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#15 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/orders/create&id=1
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (127)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (35)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 10:57:14 [error] [php] include(CVarDump.php): failed to open stream: No such file or directory (/home/nike/webprojects/wedding/framework/YiiBase.php:418)
+Stack trace:
+#0 /home/nike/webprojects/wedding/www/protected/models/Orders.php(127): spl_autoload_call()
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(35): Orders->SuccesTime()
+#2 unknown(0): OrdersController->actionCreate()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#4 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#5 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): OrdersController->runAction()
+#7 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): OrdersController->filterAccessControl()
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/nike/webprojects/wedding/framework/web/CController.php(266): OrdersController->runActionWithFilters()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): OrdersController->run()
+#14 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#15 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/orders/create&id=1
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (127)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (35)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 10:59:07 [warning] [application] Не удалось присвоить небезопасный атрибут "date_brony" класса "Orders".
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (34)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 10:59:15 [warning] [application] Не удалось присвоить небезопасный атрибут "date_brony" класса "Orders".
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (34)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:05:25 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end.
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (126)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (35)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:05:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end' in /home/nike/webprojects/wedding/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 /home/nike/webprojects/wedding/www/protected/models/Orders.php(126): CActiveRecord->count(' BETWEEN date_b...')
+#3 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(35): Orders->SuccesTime('')
+#4 [internal function]: OrdersController->actionCreate('4')
+#5 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#6 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#17 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=4
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=4
+---
+2012/02/03 11:05:47 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15:10:00 BETWEEN date_brony AND date_brony_end' at line 1. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `orders` `t` WHERE 2012-02-22 15:10:00 BETWEEN date_brony AND date_brony_end.
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (126)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (35)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:05:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15:10:00 BETWEEN date_brony AND date_brony_end' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `orders` `t` WHERE 2012-02-22 15:10:00 BETWEEN date_brony AND date_brony_end' in /home/nike/webprojects/wedding/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 /home/nike/webprojects/wedding/www/protected/models/Orders.php(126): CActiveRecord->count('2012-02-22 15:1...')
+#3 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(35): Orders->SuccesTime('2012-02-22 15:1...')
+#4 [internal function]: OrdersController->actionCreate('4')
+#5 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#6 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#17 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=4
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=4
+---
+2012/02/03 11:06:13 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15:10:00 BETWEEN date_brony AND date_brony_end' at line 1. Выполнявшийся SQL-запрос: SELECT * FROM `orders` `t` WHERE 2012-02-22 15:10:00 BETWEEN date_brony AND date_brony_end.
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (126)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (35)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:06:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15:10:00 BETWEEN date_brony AND date_brony_end' at line 1. The SQL statement executed was: SELECT * FROM `orders` `t` WHERE 2012-02-22 15:10:00 BETWEEN date_brony AND date_brony_end' in /home/nike/webprojects/wedding/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/nike/webprojects/wedding/www/protected/models/Orders.php(126): CActiveRecord->findAll('2012-02-22 15:1...')
+#4 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(35): Orders->SuccesTime('2012-02-22 15:1...')
+#5 [internal function]: OrdersController->actionCreate('4')
+#6 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#7 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#8 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#18 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=4
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=4
+---
+2012/02/03 11:06:24 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15:00:00 BETWEEN date_brony AND date_brony_end' at line 1. Выполнявшийся SQL-запрос: SELECT * FROM `orders` `t` WHERE 2012-02-22 15:00:00 BETWEEN date_brony AND date_brony_end.
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (126)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (35)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:06:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15:00:00 BETWEEN date_brony AND date_brony_end' at line 1. The SQL statement executed was: SELECT * FROM `orders` `t` WHERE 2012-02-22 15:00:00 BETWEEN date_brony AND date_brony_end' in /home/nike/webprojects/wedding/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/nike/webprojects/wedding/www/protected/models/Orders.php(126): CActiveRecord->findAll('2012-02-22 15:0...')
+#4 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(35): Orders->SuccesTime('2012-02-22 15:0...')
+#5 [internal function]: OrdersController->actionCreate('4')
+#6 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#7 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#8 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#18 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=4
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=4
+---
+2012/02/03 11:23:03 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end.
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (128)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (40)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:23:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end' in /home/nike/webprojects/wedding/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 /home/nike/webprojects/wedding/www/protected/models/Orders.php(128): CActiveRecord->count(' BETWEEN date_b...')
+#3 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(40): Orders->SuccesTime(1330000800)
+#4 [internal function]: OrdersController->actionCreate('4')
+#5 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#6 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#17 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=4
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=4
+---
+2012/02/03 11:23:14 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end.
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (128)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (40)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:23:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end' in /home/nike/webprojects/wedding/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 /home/nike/webprojects/wedding/www/protected/models/Orders.php(128): CActiveRecord->count(' BETWEEN date_b...')
+#3 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(40): Orders->SuccesTime(1330000800)
+#4 [internal function]: OrdersController->actionCreate('4')
+#5 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#6 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#17 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=4
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=4
+---
+2012/02/03 11:23:40 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end.
+in /home/nike/webprojects/wedding/www/protected/models/Orders.php (128)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php (39)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 11:23:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN date_brony AND date_brony_end' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `orders` `t` WHERE  BETWEEN date_brony AND date_brony_end' in /home/nike/webprojects/wedding/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/db/CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /home/nike/webprojects/wedding/framework/db/ar/CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 /home/nike/webprojects/wedding/www/protected/models/Orders.php(128): CActiveRecord->count(' BETWEEN date_b...')
+#3 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/OrdersController.php(39): Orders->SuccesTime(1330000800)
+#4 [internal function]: OrdersController->actionCreate('4')
+#5 /home/nike/webprojects/wedding/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#6 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/orders...')
+#17 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=contedit/orders/create&id=4
+HTTP_REFERER=http://wedding/index.php?r=contedit/orders/create&id=4
+---
+2012/02/03 12:05:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "contedit/type_item".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/type_i...')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=contedit/type_item
+HTTP_REFERER=http://wedding/index.php?r=contedit/default
+---
+2012/02/03 12:05:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "contedit/type_item".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/type_i...')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=contedit/type_item
+HTTP_REFERER=http://wedding/index.php?r=contedit/default
+---
+2012/02/03 12:05:55 [error] [exception.CException] exception 'CException' with message 'Контроллер TypeItemController не может найти представление "_search".' in /home/nike/webprojects/wedding/framework/web/CController.php:879
+Stack trace:
+#0 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/typeItem/admin.php(37): CController->renderPartial('_search', Array)
+#1 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require('/home/nike/webp...')
+#2 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/nike/webp...', Array, true)
+#3 /home/nike/webprojects/wedding/framework/web/CController.php(870): CBaseController->renderFile('/home/nike/webp...', Array, true)
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#5 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/TypeItemController.php(64): CController->render('admin', Array)
+#6 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): TypeItemController->actionIndex()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('')
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/typeIt...')
+#17 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=contedit/typeItem
+HTTP_REFERER=http://wedding/index.php?r=contedit/default
+---
+2012/02/03 12:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "пшш".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('??????')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%D0%BF%D1%88%D1%88
+---
+2012/02/03 12:18:40 [error] [php] Undefined variable: model (/home/nike/webprojects/wedding/www/protected/modules/contedit/views/default/index.php:4)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(870): DefaultController->renderFile()
+#1 /home/nike/webprojects/wedding/framework/web/CController.php(783): DefaultController->renderPartial()
+#2 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/DefaultController.php(8): DefaultController->render()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): DefaultController->actionIndex()
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): DefaultController->runAction()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): DefaultController->filterAccessControl()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(266): DefaultController->runActionWithFilters()
+#12 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): DefaultController->run()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/default
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/views/default/index.php (4)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/DefaultController.php (8)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 12:18:51 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CActiveDataProvider.title".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/helpers/CHtml.php(1696): CComponent->__get('title')
+#1 /home/nike/webprojects/wedding/framework/zii/widgets/CDetailView.php(210): CHtml::value(Object(CActiveDataProvider), 'title')
+#2 /home/nike/webprojects/wedding/framework/web/CBaseController.php(174): CDetailView->run()
+#3 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/default/index.php(9): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require('/home/nike/webp...')
+#5 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/nike/webp...', Array, true)
+#6 /home/nike/webprojects/wedding/framework/web/CController.php(870): CBaseController->renderFile('/home/nike/webp...', Array, true)
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#8 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/DefaultController.php(8): CController->render('index', Array)
+#9 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): DefaultController->actionIndex()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#17 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('')
+#19 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/defaul...')
+#20 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=contedit/default
+HTTP_REFERER=http://wedding/index.php?r=contedit/default
+---
+2012/02/03 12:19:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "пшш".' in /home/nike/webprojects/wedding/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('??????')
+#1 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%D0%BF%D1%88%D1%88
+---
+2012/02/03 12:21:03 [error] [exception.CException] exception 'CException' with message 'Контроллер DefaultController не может найти представление "_view".' in /home/nike/webprojects/wedding/framework/web/CController.php:879
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/zii/widgets/CListView.php(242): CController->renderPartial('_view', Array)
+#1 /home/nike/webprojects/wedding/framework/zii/widgets/CBaseListView.php(158): CListView->renderItems()
+#2 [internal function]: CBaseListView->renderSection(Array)
+#3 /home/nike/webprojects/wedding/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#4 /home/nike/webprojects/wedding/framework/zii/widgets/CBaseListView.php(126): CBaseListView->renderContent()
+#5 /home/nike/webprojects/wedding/framework/web/CBaseController.php(174): CBaseListView->run()
+#6 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/default/index.php(6): CBaseController->widget('zii.widgets.CLi...', Array)
+#7 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require('/home/nike/webp...')
+#8 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/nike/webp...', Array, true)
+#9 /home/nike/webprojects/wedding/framework/web/CController.php(870): CBaseController->renderFile('/home/nike/webp...', Array, true)
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#11 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/DefaultController.php(8): CController->render('index', Array)
+#12 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): DefaultController->actionIndex()
+#13 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#20 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('')
+#22 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/')
+#23 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=contedit/
+---
+2012/02/03 12:22:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "item".' in /home/nike/webprojects/wedding/framework/web/CController.php:484
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(271): CController->missingAction('item')
+#1 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('item')
+#2 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/defaul...')
+#3 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=contedit/default/item&type=1
+HTTP_REFERER=http://wedding/index.php?r=contedit/default
+---
+2012/02/03 12:32:14 [error] [php] Undefined index: type (/home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php:3)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(870): ItemController->renderFile()
+#1 /home/nike/webprojects/wedding/framework/web/CController.php(783): ItemController->renderPartial()
+#2 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(66): ItemController->render()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): ItemController->actionIndex()
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): ItemController->runAction()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): ItemController->filterAccessControl()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(266): ItemController->runActionWithFilters()
+#12 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): ItemController->run()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/item/index
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php (3)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php (66)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 12:32:46 [error] [php] Undefined index: type (/home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php:3)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(870): ItemController->renderFile()
+#1 /home/nike/webprojects/wedding/framework/web/CController.php(783): ItemController->renderPartial()
+#2 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(66): ItemController->render()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): ItemController->actionIndex()
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): ItemController->runAction()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): ItemController->filterAccessControl()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(266): ItemController->runActionWithFilters()
+#12 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): ItemController->run()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/item/index
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php (3)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php (66)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 12:43:15 [error] [exception.CException] exception 'CException' with message 'В классе CActiveDataProvider и его поведениях не найден метод или замыкание с именем "unsetAttributes".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(60): CComponent->__call('unsetAttributes', Array)
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(60): CActiveDataProvider->unsetAttributes()
+#2 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): ItemController->actionIndex()
+#3 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('')
+#12 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/item')
+#13 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=contedit/item&type=2
+HTTP_REFERER=http://wedding/index.php?r=contedit/default
+---
+2012/02/03 12:43:28 [error] [exception.CException] exception 'CException' with message 'В классе CActiveDataProvider и его поведениях не найден метод или замыкание с именем "search".' in /home/nike/webprojects/wedding/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php(18): CComponent->__call('search', Array)
+#1 /home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php(18): CActiveDataProvider->search()
+#2 /home/nike/webprojects/wedding/framework/web/CBaseController.php(127): require('/home/nike/webp...')
+#3 /home/nike/webprojects/wedding/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/nike/webp...', Array, true)
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(870): CBaseController->renderFile('/home/nike/webp...', Array, true)
+#5 /home/nike/webprojects/wedding/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#6 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(66): CController->render('admin', Array)
+#7 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): ItemController->actionIndex()
+#8 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#15 /home/nike/webprojects/wedding/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): CController->run('')
+#17 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController('contedit/item')
+#18 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /home/nike/webprojects/wedding/www/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=contedit/item&type=2
+HTTP_REFERER=http://wedding/index.php?r=contedit/default
+---
+2012/02/03 12:55:52 [error] [php] Undefined index: type (/home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php:3)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(870): ItemController->renderFile()
+#1 /home/nike/webprojects/wedding/framework/web/CController.php(783): ItemController->renderPartial()
+#2 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(66): ItemController->render()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): ItemController->actionIndex()
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): ItemController->runAction()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): ItemController->filterAccessControl()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(266): ItemController->runActionWithFilters()
+#12 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): ItemController->run()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/item
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php (3)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php (66)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 13:34:36 [error] [php] Undefined index: type (/home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php:3)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(870): ItemController->renderFile()
+#1 /home/nike/webprojects/wedding/framework/web/CController.php(783): ItemController->renderPartial()
+#2 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(66): ItemController->render()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): ItemController->actionIndex()
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): ItemController->runAction()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): ItemController->filterAccessControl()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(266): ItemController->runActionWithFilters()
+#12 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): ItemController->run()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/item
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php (3)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php (66)
+in /home/nike/webprojects/wedding/www/index.php (13)
+2012/02/03 16:27:31 [error] [php] Undefined index: type (/home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php:3)
+Stack trace:
+#0 /home/nike/webprojects/wedding/framework/web/CController.php(870): ItemController->renderFile()
+#1 /home/nike/webprojects/wedding/framework/web/CController.php(783): ItemController->renderPartial()
+#2 /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php(66): ItemController->render()
+#3 /home/nike/webprojects/wedding/framework/web/actions/CInlineAction.php(50): ItemController->actionIndex()
+#4 /home/nike/webprojects/wedding/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(134): ItemController->runAction()
+#6 /home/nike/webprojects/wedding/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/nike/webprojects/wedding/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /home/nike/webprojects/wedding/framework/web/filters/CInlineFilter.php(59): ItemController->filterAccessControl()
+#9 /home/nike/webprojects/wedding/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /home/nike/webprojects/wedding/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/nike/webprojects/wedding/framework/web/CController.php(266): ItemController->runActionWithFilters()
+#12 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(276): ItemController->run()
+#13 /home/nike/webprojects/wedding/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /home/nike/webprojects/wedding/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/nike/webprojects/wedding/www/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=contedit/item
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/views/item/admin.php (3)
+in /home/nike/webprojects/wedding/www/protected/modules/contedit/controllers/ItemController.php (66)
+in /home/nike/webprojects/wedding/www/index.php (13)

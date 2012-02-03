@@ -36,11 +36,20 @@ class Orders extends CActiveRecord
 	    if ($this->isNewRecord) {
 	        $this->date_add = time();
 	    }
+
         $this->total_price = $this->TotalPrice($this->id_item, $this->total_hours);
         $this->date_brony = CDateTimeParser::parse($this->date_brony,'yyyy-MM-dd hh:mm:ss');
+        $this->date_brony_end = $this->date_brony + $this->total_hours*3600;
 
 	    return parent::beforeSave();
 	}
+
+    public function beforeValidate()
+    {
+        if($this->SuccesTime($this->date_brony, $this->id) > 0)
+           $this->addError('date_brony', 'Эта дата и время уже забронированы. Выберите другую дату и время.');
+        return parent::beforeValidate();
+    }
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -50,12 +59,12 @@ class Orders extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_user, id_item, total_hours, date_brony', 'required'),
-			array('id_user, id_item, total_hours', 'numerical', 'integerOnly'=>true),
+			array('id_user, id_item, total_hours, date_brony_end', 'numerical', 'integerOnly'=>true),
 			array('total_price', 'numerical'),
 			//array('date_brony', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_user, id_item, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
+			array('id, id_user, date_brony_end,id_item, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +89,7 @@ class Orders extends CActiveRecord
 			'id_user' => 'Пользователь',
 			'id_item' => 'Контент',
 			'date_brony' => 'Дата бронирования',
+            'date_brony_end' => 'Окончание Даты бронирования',
 			'total_hours' => 'Количество часов',
 			'date_add' => 'Дата Добавления',
 			'total_price' => 'Общая сумма',
@@ -101,7 +111,7 @@ class Orders extends CActiveRecord
 		$criteria->compare('id_user',$this->id_user);
 		$criteria->compare('id_item',$this->id_item);
 		$criteria->compare('date_brony',$this->date_brony,true);
-        $criteria->compare('date_brony_end',$this->date_brony,true);
+        $criteria->compare('date_brony_end',$this->date_brony_end,true);
 		$criteria->compare('total_hours',$this->total_hours);
 		$criteria->compare('date_add',$this->date_add,true);
 		$criteria->compare('total_price',$this->total_price);
@@ -119,8 +129,11 @@ class Orders extends CActiveRecord
         return $total;
     }
 
-    public function SuccesTime($brony, $hour)
+    public function SuccesTime($brony, $id)
     {
-          
+        $br = CDateTimeParser::parse($brony,'yyyy-MM-dd hh:mm:ss');
+        $all_time = $this->count('id!=:id AND '.$br.' BETWEEN date_brony AND date_brony_end', array(":id"=>$id));
+
+        return $all_time;
     }
 }
