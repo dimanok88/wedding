@@ -1,6 +1,14 @@
 <?php
+$news = array();
+$visible = false;
+if(isset($_GET['type']) && $_GET['type'] == 'news')
+{
+    $news = array('label'=>'Категории', 'url'=>array('category/'));
+    $visible = true;
+}
 $this->menu=array(
 	array('label'=>'Добавить', 'url'=>array('create')),
+    $news
 );
 ?>
 
@@ -13,13 +21,17 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'pages-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search($_GET['type']),
 	'filter'=>$model,
 	'columns'=>array(
 		'title',
 		'keywords',
 		'description',
-		'meta_title',
+        'meta_title',
+        'category'=>array('name'=>'category',
+                          'filter'=>Category::model()->AllCat(),
+                          'value'=>'Category::model()->getNameCat($data->category)',
+                          'visible'=>$visible),
 		'active'=>array(
             'name'=>'active',
             'filter'=>array('0'=>'Нет','1'=>'Да'),

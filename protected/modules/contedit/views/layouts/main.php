@@ -32,9 +32,10 @@
 				array('label'=>'Контент', 'url'=>array('default/'),
                     'items'=>array(
                          array('label' => 'Тип контента', 'url' => array('typeItem/')),
+                         array('label'=>'Страницы', 'url'=>array('pages/', 'type'=>'pages')),
+                         array('label'=>'Новости', 'url'=>array('pages/', 'type'=>'news')),
                      ),
                 ),
-                array('label'=>'Страницы', 'url'=>array('pages/')),
 				array('label'=>'Пользователи', 'url'=>array('users/')),
                 array('label'=>'Бронирование', 'url'=>array('orders/')),
 				//array('label'=>'Login', 'url'=>array('item/login'), 'visible'=>Yii::app()->user->isGuest),
