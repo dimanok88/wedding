@@ -6,10 +6,9 @@ class PagesController extends ContController
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($id = '')
+	public function actionCreate($id = '', $type= '')
 	{
 		$model=new Pages;
-
         if(!empty($id)) $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -18,8 +17,9 @@ class PagesController extends ContController
 		if(isset($_POST['Pages']))
 		{
 			$model->attributes=$_POST['Pages'];
+            $model->type = $_GET['type'];
 			if($model->save())
-				$this->redirect(array('index'));
+				$this->redirect(array('index', 'type'=>$type));
 		}
 
 		$this->render('create',array(

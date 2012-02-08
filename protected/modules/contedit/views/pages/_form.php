@@ -29,6 +29,14 @@
 		<?php echo $form->error($model,'text'); ?>
 	</div>
 
+    <?if(isset($_GET['type']) && $_GET['type'] == 'news'){ ?>
+    <div class="row">
+		<?php echo $form->labelEx($model,'category'); ?>
+		<?php echo $form->DropDownList($model,'category', Category::model()->AllCat()); ?>
+		<?php echo $form->error($model,'category'); ?>
+	</div>
+    <? } ?>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'keywords'); ?>
 		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>160)); ?>

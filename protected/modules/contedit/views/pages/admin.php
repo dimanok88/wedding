@@ -1,18 +1,22 @@
 <?php
 $news = array();
 $visible = false;
+$title = 'Информационные страницы';
+$type = $_GET['type'];
 if(isset($_GET['type']) && $_GET['type'] == 'news')
 {
     $news = array('label'=>'Категории', 'url'=>array('category/'));
+    $title = 'Новости';
     $visible = true;
 }
 $this->menu=array(
-	array('label'=>'Добавить', 'url'=>array('create')),
-    $news
-);
+	    array('label'=>'Добавить', 'url'=>array('create', 'type'=>$type)),
+        $news
+    );
+
 ?>
 
-<h1>Информационные страницы</h1>
+<h1><?= $title?></h1>
 
 <p>
 Вы можете использовать следующие операторы для поиска (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -21,7 +25,7 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'pages-grid',
-	'dataProvider'=>$model->search($_GET['type']),
+	'dataProvider'=>$model->search($type),
 	'filter'=>$model,
 	'columns'=>array(
 		'title',
