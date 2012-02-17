@@ -83,4 +83,15 @@ class TypeItem extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function AllTypeItem()
+    {
+        $items = $this->findAll();
+        $new_list_items = array();
+        foreach($items as $item){
+            $new_list_items[$item['id']] = $item['title'];
+        }
+
+        return $new_list_items;
+    }
 }

@@ -5,17 +5,30 @@
  *
  * The followings are the available columns in table 'users':
  * @property integer $id
- * @property string $name
- * @property string $fast_name
- * @property string $phone
+ * @property string $login
+ * @property string $password
  * @property string $email
- * @property string $date_reg
+ * @property string $name
+ * @property string $role
+ * @property integer $active
  */
 class Users extends CActiveRecord
 {
+    public $password_req;
+    public $send_mail;
+
+    const ITEM_TYPE_ADMIN = 'admin';
+    const ITEM_TYPE_MODERATOR = 'moderator';
+    const ITEM_TYPE_GUEST = 'guest';
+
+    const USER_TYPE_FIZ = 'fiz';
+    const USER_TYPE_UR = 'ur';
+
+    const USER_NAL= 'nal';
+    const USER_BEZNAL = 'beznal';
+
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
 	 * @return Users the static model class
 	 */
 	public static function model($className=__CLASS__)
@@ -33,10 +46,21 @@ class Users extends CActiveRecord
 
     public function beforeSave() {
 	    if ($this->isNewRecord) {
-	        $this->date_reg = time();
+	        $this->date_reg = new CDbExpression('NOW()');
+            $this->id_user_reg = Yii::app()->user->id;
+            if($this->id_user_reg == 0)
+                $this->code_active = $this->GenerateCode();
+            if($this->send_mail == 1)
+                $this->SendMail();
 	    }
 
 	    return parent::beforeSave();
+	}
+
+    public function beforeValidate() {
+        $this->phone = str_replace(array('(',')','-'), '', $this->phone);
+
+        return parent::beforeValidate();
 	}
 
 	/**
@@ -47,16 +71,19 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, fast_name, phone, email', 'required'),
-            array('phone, email', 'unique'),
-            array('email', 'email'),
-            array('phone', 'match', 'pattern' => '!9[0-9]{9}!u'),
-			array('name, fast_name', 'length', 'max'=>40),
-			array('phone', 'length', 'max'=>11),
-			array('email', 'length', 'max'=>50),
+			array('login, password, email, name, role, phone', 'required'),
+			array('active, id_user_reg, send_mail, content_id', 'numerical', 'integerOnly'=>true),
+            array('login, email, code_active', 'unique'),
+			array('login, name', 'length', 'max'=>30),
+			array('password', 'length', 'max'=>60),
+            array('password_req', 'length', 'max'=>60),
+			array('password_req', 'compare', 'compareAttribute' => 'password'),
+			array('email', 'length', 'max'=>40),
+            array('organization, address pay,phone', 'default'),
+			array('role', 'length', 'max'=>15),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, fast_name, phone, email, date_reg', 'safe', 'on'=>'search'),
+			array('id, login, send_mail, password, email, pay, address, date_reg, phone, id_user_reg, code_active, name, role, active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,12 +104,24 @@ class Users extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Имя',
-			'fast_name' => 'Фамилия',
-			'phone' => 'Телефон',
+			'id' => '№',
+			'login' => 'Логин',
+			'password' => 'Пароль',
 			'email' => 'E-mail',
-			'date_reg' => 'Дата регистрации',
+			'name' => 'Имя',
+			'role' => 'Роль',
+			'active' => 'Вкл.',
+            'send_mail' => 'Отправить уведомление',
+            'password_req'=>'Повторите пароль',
+            'address'=>'Адрес доставки',
+            'date_reg'=>'Дата регистрации',
+            'phone'=>'Телефон',
+            'id_user_reg'=>'Регистратор',
+            'code_active'=>'Код активации',
+            'organization'=>'Организация',
+            'pay'=>'Способ оплаты',
+            'content_id'=>'Тип контента',
+            'date_modify'=>'Дата модификации',
 		);
 	}
 
@@ -98,38 +137,67 @@ class Users extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('fast_name',$this->fast_name,true);
-		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('login',$this->login,'LIKE');
+		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('date_reg',$this->date_reg,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('role',$this->role);
+		$criteria->compare('active',$this->active);
+		$criteria->compare('id_user_reg',$this->id_user_reg,true);
+		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('address',$this->address);
+        $criteria->compare('organization',$this->organization,true);
+        $criteria->compare('code_active',$this->code_active,true);
+        $criteria->compare('pay',$this->pay);
+
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 
-    public function getName($id)
+    public function getActive($act)
     {
-        $user = $this->findByPk($id);
-        $name = $user['name']." (".$user['phone'].")";
-        return $name;
+        if($act == 1) return 'Да';
+        return 'Нет';
+
     }
 
-    public function getDate($time)
+    public function AllRoles()
     {
-        $time = date('Y-m-d H:i:s', $time);
-        return $time;
+        return array(
+            //self::ITEM_TYPE_ADMIN => 'Админ',
+            self::ITEM_TYPE_MODERATOR => 'Модератор',
+            self::ITEM_TYPE_GUEST => 'Пользователь',
+        );
     }
 
-    public function AllUsers()
+    public function GenerateCode()
     {
-        $users = $this->findAll();
-        $new_list_users = array();
-        foreach($users as $user){
-            $new_list_users[$user['id']] = $user['name']."(".$user['phone'].")";
-        }
+        $code = md5($this->email);
+        return $code;
+    }
 
-        return $new_list_users;
+    public function PayUser()
+    {
+        return array(
+            self::USER_NAL => 'Наличный расчет',
+            self::USER_BEZNAL => 'Безналичный расчет',
+        );
+    }
+
+    public function SendMail()
+    {
+        $email = Yii::app()->email;
+        
+        $email->from = 'admin@мобиль36.рф';
+        $email->language = "ru";
+        $email->contentType = 'utf8';
+        $email->to = $this->email;
+        $email->subject = 'Регистрация на сайте мобиль36.рф';
+        $email->view = 'regUser';
+        $email->viewVars = array('login'=>$this->login,'phone'=>$this->phone);
+        $email->send();
     }
 }

@@ -1,105 +1,98 @@
 <?php
 
-class UsersController extends ContController
-{
+define('CSV_DELIMITER', ';');
+/**
+ * Created by JetBrains PhpStorm.
+ * User: nike
+ * Date: 02.12.11
+ * Time: 16:25
+ * To change this template use File | Settings | File Templates.
+ */
+ 
+class UsersController extends ContController {
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
+    public function actionIndex()
+    {
+        if (!Yii::app()->user->isGuest){
+            $this->redirect(array('users/listUsers'));
+        }
+        $this->redirect(array('site/login'));
+    }
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Users']))
+    // Список пользователей 
+    public function actionListUsers(){
+        $model=new Users('search'); //загрузка модели с возможностью поиска по шинам
+
+        $url = "http://".$_SERVER['HTTP_HOST'].Yii::app()->request->getRequestUri();
+		Yii::app()->user->setState('url_get', $url);
+
+		$model->unsetAttributes();  // clear any default values
+		if( isset($_GET[get_class($model)]) )
+        {
+			$model->attributes = $_GET[get_class($model)];
+        }
+        $this->render('listUsers', array('model'=>$model));
+    }
+    ////////////////////////////////////////////
+
+    //Добавление и редактирование пользователя. Если id = '' тогда новый пользователь иначе происходит редактирование
+    public function actionUpdate($id='')
+    {
+        $model = new Users();
+
+        $url = Yii::app()->user->getState('url_get');
+
+        if(!empty($id)) $model = Users::model()->findByPk($id);
+
+        if(isset($_POST['Users']))
+        {
+            if($id != '') $pass = $model->password;
+            
+            $model->attributes = $_POST[get_class($model)];
+            if(empty($_POST[get_class($model)]['password']) && $id != '')
+            {
+                $model->password = $pass;
+                $model->password_req = $model->password;
+            }
+            else
+            {
+                $model->password = crypt($_POST[get_class($model)]['password'], substr($_POST[get_class($model)]['password'], 0, 2));
+                $model->password_req = crypt($_POST[get_class($model)]['password_req'], substr($_POST[get_class($model)]['password_req'], 0, 2));
+            }
+            if($model->save())
+            {
+                $this->redirect(array('users/listUsers'));
+            }
+        }
+
+        $this->render('update', array('model'=>$model));
+    }
+    ////////////////////////////////////////////
+
+    //Удаление пользователя
+    public function actionDelete()
+    {
+        if( Yii::app()->request->isPostRequest )
 		{
-			$model->attributes=$_POST['Users'];
-			if($model->save())
-				$this->redirect(array('index'));
-		}
+			Users::model()->findbyPk($_GET['id'])->delete();
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			if( !isset($_GET['ajax']) )
+            {
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('users/listUsers'));
+            }
 		}
 		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-	}
+        {
+			throw new CHttpException(400, 'Ошибка в запросе.');
+        }
+    }
 
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$model=new Users('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Users']))
-			$model->attributes=$_GET['Users'];
+    //Просмотр данных пользователя найденых через autoComplete
+    public function actionViewUser($ids)
+    {
+        $user = Users::model()->findByPk($ids);
+        $this->render('viewUser', array('user'=>$user));
+    }
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new Users('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Users']))
-			$model->attributes=$_GET['Users'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the ID of the model to be loaded
-	 */
-	public function loadModel($id)
-	{
-		$model=Users::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='users-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
 }
