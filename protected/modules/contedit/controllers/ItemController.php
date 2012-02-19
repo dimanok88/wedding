@@ -22,8 +22,15 @@ class ItemController extends ContController
 		{
 			$model->attributes=$_POST['Item'];
             $model->type = $_GET['type'];
+            //$files = CUploadedFile::getInstance($model, 'file');
+            //CVarDumper::dump($_FILES['Item'], 10 ,true);
+            
 			if($model->save())
-				$this->redirect(array('index', 'type'=>$_GET['type']));
+            {
+                $files = $_FILES['Item'];
+                Pictures::model()->loadPic($model->id, $files);
+                $this->redirect(array('index', 'type'=>$_GET['type']));
+            }
 		}
 
 		$this->render('create',array(
@@ -43,6 +50,7 @@ class ItemController extends ContController
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
 
+            Pictures::model()->picDel($id);
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

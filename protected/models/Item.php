@@ -13,6 +13,7 @@
  */
 class Item extends CActiveRecord
 {
+    public $file;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -43,6 +44,7 @@ class Item extends CActiveRecord
 			array('active, type', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
 			array('name', 'length', 'max'=>60),
+            array('file' , 'file', 'types'=>'jpg, gif, png, jpeg', 'allowEmpty' => true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, description, price, date_add, active', 'safe', 'on'=>'search'),
@@ -76,6 +78,7 @@ class Item extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Название',
+            'file'=>'Фото',
 			'description' => 'Описание',
 			'price' => 'Цена за час',
 			'date_add' => 'Дата добавления',

@@ -37,7 +37,7 @@ class Pictures extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('pic, format, id_item', 'required'),
+			array('pic, id_item', 'required'),
 			array('id_item', 'numerical', 'integerOnly'=>true),
 			array('pic', 'length', 'max'=>60),
 			array('format', 'length', 'max'=>6),
@@ -91,4 +91,48 @@ class Pictures extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+   public function loadPic($id, $f){
+       if(!empty($id))
+       {
+           $imageHandler = new CImageHandler();
+           $files = $f['tmp_name']['file'];
+           $names = $f['name'] ['file'];
+
+           $i = 0;
+           foreach($files as $file){
+              if(!empty($file)){
+                $model = new Pictures();
+                $model->pic = $names[$i];
+                $model->id_item = $id;
+                  echo $id;
+                  //exit();
+                if($model->save()){
+                    $imageHandler->load ( $file )
+                               ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id.".jpg");
+                    $imageHandler->load ( $file )
+                                 ->thumb(Yii::app()->params['imgThumbWidth'],Yii::app()->params['imgThumbHeight'])
+                                 ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id."_small.jpg");
+               }
+              $i++;
+           }
+       }
+           //exit();
+     }
+       else return false;
+   }
+
+   public function picDel($id)
+   {
+       $pic = $this->findAll('id_item=:id_i', array(':id_i'=>$id));
+       foreach($pic as $p)
+       {
+            if(file_exists(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id'].".jpg"))
+            {
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id'].".jpg");
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id']."_small.jpg");
+            }
+            Pictures::model()->deleteByPk($p['id']);
+       }
+   }
 }

@@ -3,6 +3,9 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'item-form',
 	'enableAjaxValidation'=>false,
+    'htmlOptions' => array(
+        'enctype' => 'multipart/form-data',
+    ),
 )); ?>
 
 	<p class="note">Обязательные поля <span class="required">*</span>.</p>
@@ -33,6 +36,54 @@
 		<?php echo $form->labelEx($model,'price'); ?>
 		<?php echo $form->textField($model,'price'); ?>
 		<?php echo $form->error($model,'price'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'file'); ?>
+		<?php echo $form->fileField($model,'file[]'); ?>
+		<?php echo $form->error($model,'file[]'); ?>
 	</div>
 
 	<div class="row">
