@@ -135,4 +135,48 @@ class Pictures extends CActiveRecord
             Pictures::model()->deleteByPk($p['id']);
        }
    }
+
+    public function ModelPic($id , $class = 'pic_admin')
+    {
+        if(!empty($id)){
+            $pictures = $this->findAll('id_item=:id_i', array(':id_i'=>$id));
+            $pic_html = "<ul id='".$class."'>";
+            foreach($pictures as $pic)
+            {
+                $link = '/resources/upload/'.$id. "_".$pic['id']."_small.jpg";
+                $img = CHtml::image($link);
+                $pic_html .= "<li>".$img."<br/>".CHtml::link('Удалить', array('pictures/delete', 'id'=>$pic['id'], 'model_id'=>$id), array('class'=>'delete'))."</li>";
+            }
+
+            $pic_html .="</ul>";
+            return $pic_html;
+        }
+        else return false;
+    }
+
+
+    public function AllPic($id_item)
+    {
+        if(!empty($id_item)){
+            $pictures = $this->findAll('id_item=:id_i', array(':id_i'=>$id_item));
+            $pic_html = "";
+            $i = 0;
+            foreach($pictures as $pic)
+            {
+
+                $link = '/resources/upload/'.$id_item. "_".$pic['id']."_small.jpg";
+                $link_big = '/resources/upload/'.$id_item. "_".$pic['id'].".jpg";
+                $img = CHtml::image($link);
+                if($i == 0)
+                    $pic_html .= CHtml::link($img, $link_big, array('class' => 'cloud-zoom', 'id'=>'zoom1', 'rel'=>"adjustX: 10, adjustY:-4, softFocus:true"));
+
+                 $pic_html .= CHtml::link($img, $link_big, array('class' => 'cloud-zoom-gallery',
+                                                                   'rel'=>"useZoom: 'zoom1', smallImage: '".$link."'"));
+                $i++;
+            }
+
+            return $pic_html;
+        }
+        else return '';
+    }
 }

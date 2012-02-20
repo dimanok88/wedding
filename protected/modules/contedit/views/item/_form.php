@@ -86,6 +86,13 @@
 		<?php echo $form->error($model,'file[]'); ?>
 	</div>
 
+    <div>
+        <?
+            //if(!$model->isNewRecord)
+            echo Pictures::model()->ModelPic($model->id);
+        ?>
+    </div>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'active'); ?>
 		<?php echo $form->checkBox($model,'active'); ?>
@@ -99,3 +106,15 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<?php
+Yii::app()->clientScript->registerScript('index', "
+jQuery('#pic_admin a.delete').live('click',function() {
+if(!confirm('Вы уверены, что хотите удалить данный элемент?')) return false;
+var th=this;
+var afterDelete=function(){};
+$.post($(this).attr('href'), function(data) {
+  $('#pic_admin').html(data);
+});
+return false;
+});");
+?>

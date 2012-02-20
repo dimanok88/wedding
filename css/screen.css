@@ -236,3 +236,6 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
+
+#pic_admin { list-style-type: none; margin: 0; padding: 0;}
+#pic_admin li { display: inline-block; vertical-align: bottom; text-align: center; margin: 10px;}
