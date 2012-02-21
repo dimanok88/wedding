@@ -97,7 +97,11 @@ class Pictures extends CActiveRecord
        {
            $imageHandler = new CImageHandler();
            $files = $f['tmp_name']['file'];
+           $foto_main = $f['tmp_name']['foto'];
            $names = $f['name'] ['file'];
+
+           $imageHandler->load ( $foto_main )
+                                 ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id."_main.jpg");
 
            $i = 0;
            foreach($files as $file){
@@ -109,10 +113,17 @@ class Pictures extends CActiveRecord
                   //exit();
                 if($model->save()){
                     $imageHandler->load ( $file )
-                               ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id.".jpg");
+                                 ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id.".jpg");
                     $imageHandler->load ( $file )
                                  ->thumb(Yii::app()->params['imgThumbWidth'],Yii::app()->params['imgThumbHeight'])
                                  ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id."_small.jpg");
+                    $imageHandler->load ( $file )
+                                 ->thumb(150,120)
+                                 ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id."_pre.jpg");
+                    
+                    $imageHandler->load(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id."_pre.jpg")
+                                 ->crop(Yii::app()->params['imgMiniWidth'],Yii::app()->params['imgMiniHeight'], 0, 0)
+                                 ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$model->id."_mini.jpg");
                }
               $i++;
            }
@@ -122,14 +133,21 @@ class Pictures extends CActiveRecord
        else return false;
    }
 
-   public function picDel($id)
+   public function picDel($id,$model_id ='')
    {
        $pic = $this->findAll('id_item=:id_i', array(':id_i'=>$id));
+
        foreach($pic as $p)
        {
             if(file_exists(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id'].".jpg"))
             {
+               if(file_exists(Yii::app()->getBasePath() . '/../resources/upload/'.$id."_main.jpg"))
+               {
+                    unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$id."_main.jpg");
+               }
                 unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id'].".jpg");
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id']."_mini.jpg");
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id']."_pre.jpg");
                 unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$id. "_".$p['id']."_small.jpg");
             }
             Pictures::model()->deleteByPk($p['id']);
@@ -159,23 +177,28 @@ class Pictures extends CActiveRecord
     {
         if(!empty($id_item)){
             $pictures = $this->findAll('id_item=:id_i', array(':id_i'=>$id_item));
-            $pic_html = "";
-            $i = 0;
-            foreach($pictures as $pic)
-            {
+            if(count($pictures) > 0){
+                $pic_html = "";
+                $i = 0;
+                foreach($pictures as $pic)
+                {
 
-                $link = '/resources/upload/'.$id_item. "_".$pic['id']."_small.jpg";
-                $link_big = '/resources/upload/'.$id_item. "_".$pic['id'].".jpg";
-                $img = CHtml::image($link);
-                if($i == 0)
-                    $pic_html .= CHtml::link($img, $link_big, array('class' => 'cloud-zoom', 'id'=>'zoom1', 'rel'=>"adjustX: 10, adjustY:-4, softFocus:true"));
+                    $link = '/resources/upload/'.$id_item. "_".$pic['id']."_small.jpg";
+                    $link_mini = '/resources/upload/'.$id_item. "_".$pic['id']."_mini.jpg";
+                    $link_big = '/resources/upload/'.$id_item. "_".$pic['id'].".jpg";
+                    $img = CHtml::image($link);
+                    $img_mini = CHtml::image($link_mini);
+                    if($i == 0)
+                        $pic_main = "<div class='main_pic'>".CHtml::link($img, $link_big, array('class' => 'cloud-zoom', 'id'=>'zoom1', 'rel'=>"adjustX: 10, adjustY:-4, softFocus:true"))."</div>";
 
-                 $pic_html .= CHtml::link($img, $link_big, array('class' => 'cloud-zoom-gallery',
-                                                                   'rel'=>"useZoom: 'zoom1', smallImage: '".$link."'"));
-                $i++;
+                     $pic_html .= CHtml::link($img_mini, $link_big, array('class' => 'cloud-zoom-gallery',
+                                                                       'rel'=>"useZoom: 'zoom1', smallImage: '".$link."'"));
+                    $i++;
+                }
+
+                return "<div class='pic_thumb'>".$pic_html."</div>".$pic_main;
             }
-
-            return $pic_html;
+            else return '';
         }
         else return '';
     }

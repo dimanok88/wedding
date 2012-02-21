@@ -20,7 +20,7 @@ return array(
 	),
 
 	'components'=>array(
-        'dateFormatter'=>array('class'=>'CDateFormatter', 'params'=>array('ru')),
+        //'dateFormatter'=>array('class'=>'CDateFormatter', 'params'=>array('ru')),
 		'user'=>array(
 			'allowAutoLogin' => true,
             'loginUrl' => array('site/login'),
@@ -100,8 +100,10 @@ return array(
 
         'uploadDir' => '/resources/upload/',
 
-        'imgThumbWidth' => '200',
+        'imgThumbWidth' => '350',
         'imgThumbHeight' => '150',
+        'imgMiniWidth' => '100',
+        'imgMiniHeight' => '80',
         'imgWidth' => '480',
         'imgHeight' => '320',
 

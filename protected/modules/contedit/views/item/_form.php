@@ -39,6 +39,12 @@
 	</div>
 
     <div class="row">
+		<?php echo $form->labelEx($model,'foto'); ?>
+		<?php echo $form->fileField($model,'foto'); ?>
+		<?php echo $form->error($model,'foto'); ?>
+	</div>
+
+    <div class="row">
 		<?php echo $form->labelEx($model,'file'); ?>
 		<?php echo $form->fileField($model,'file[]'); ?>
 		<?php echo $form->error($model,'file[]'); ?>

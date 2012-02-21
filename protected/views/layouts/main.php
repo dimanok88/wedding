@@ -48,6 +48,8 @@
 
 	<div class="clear"></div>
 
+    <?php $this->widget('ext.simple-calendar.SimpleCalendarWidget'); ?>
+
 </div><!-- page -->
 
 </body>

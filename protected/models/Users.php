@@ -73,7 +73,7 @@ class Users extends CActiveRecord
 		return array(
 			array('login, password, email, name, role, phone', 'required'),
 			array('active, id_user_reg, send_mail, content_id', 'numerical', 'integerOnly'=>true),
-            array('login, email, code_active', 'unique'),
+            array('login, email, code_active, phone', 'unique'),
 			array('login, name', 'length', 'max'=>30),
 			array('password', 'length', 'max'=>60),
             array('password_req', 'length', 'max'=>60),
@@ -185,6 +185,19 @@ class Users extends CActiveRecord
             self::USER_NAL => 'Наличный расчет',
             self::USER_BEZNAL => 'Безналичный расчет',
         );
+    }
+
+    public function getName($id)
+    {
+        $user = $this->findByPk($id);
+        $name = $user['name']." (".$user['phone'].")";
+        return $name;
+    }
+
+    public function getDate($time)
+    {
+        $time = date('Y-m-d H:i:s', $time);
+        return $time;
     }
 
     public function SendMail()

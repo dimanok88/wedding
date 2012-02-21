@@ -73,6 +73,14 @@ class PicturesController extends ContController
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
 
+            if(file_exists(Yii::app()->getBasePath() . '/../resources/upload/'.$model_id. "_".$id.".jpg"))
+            {
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$model_id. "_".$id.".jpg");
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$model_id. "_".$id."_mini.jpg");
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$model_id. "_".$id."_pre.jpg");
+                unlink(Yii::app()->getBasePath() . '/../resources/upload/'.$model_id. "_".$id."_small.jpg");
+            }
+
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
                 echo Pictures::model()->ModelPic($model_id);

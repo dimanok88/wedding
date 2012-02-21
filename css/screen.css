@@ -239,3 +239,6 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 
 #pic_admin { list-style-type: none; margin: 0; padding: 0;}
 #pic_admin li { display: inline-block; vertical-align: bottom; text-align: center; margin: 10px;}
+
+.main_pic{ float: left;}
+.pic_thumb { float: right;}

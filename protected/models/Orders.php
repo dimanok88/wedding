@@ -46,7 +46,7 @@ class Orders extends CActiveRecord
 
     public function beforeValidate()
     {
-        if($this->SuccesTime($this->date_brony, $this->id) > 0)
+        if($this->SuccesTime($this->date_brony, $this->id_item) > 0)
            $this->addError('date_brony', 'Эта дата и время уже забронированы. Выберите другую дату и время.');
         return parent::beforeValidate();
     }
@@ -129,11 +129,12 @@ class Orders extends CActiveRecord
         return $total;
     }
 
-    public function SuccesTime($brony, $id)
+    public function SuccesTime($brony, $id = '')
     {
         $br = CDateTimeParser::parse($brony,'yyyy-MM-dd hh:mm:ss');
-        $all_time = $this->count('id!=:id AND '.$br.' BETWEEN date_brony AND date_brony_end', array(":id"=>$id));
-
+        if(!empty($id))
+            $all_time = $this->count('id_item=:id AND '.$br.' BETWEEN date_brony AND date_brony_end', array(":id"=>$id));
+        else $all_time = array();
         return $all_time;
     }
 }
