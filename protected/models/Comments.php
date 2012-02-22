@@ -30,6 +30,14 @@ class Comments extends CActiveRecord
 		return 'comments';
 	}
 
+    public function beforeSave() {
+	    if ($this->isNewRecord) {
+	        $this->date_add = time();
+	    }
+
+	    return parent::beforeSave();
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -38,11 +46,11 @@ class Comments extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_item, date_add, id_user, text', 'required'),
-			array('id_item, date_add, id_user', 'numerical', 'integerOnly'=>true),
+			array('id_item, date_add, name_user, text, type_item', 'required'),
+			array('id_item, date_add, active', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_item, date_add, id_user, text', 'safe', 'on'=>'search'),
+			array('id, id_item, date_add, name_user, text', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,11 +71,13 @@ class Comments extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'id_item' => 'Id Item',
-			'date_add' => 'Date Add',
-			'id_user' => 'Id User',
-			'text' => 'Text',
+			'id' => 'Номер',
+			'id_item' => 'Контент',
+			'date_add' => 'Добавлен',
+			'name_user' => 'Имя',
+            'active'=>'Вкл.',
+            'type_item'=>'Тип контента',
+			'text' => 'Текст',
 		);
 	}
 
@@ -85,7 +95,7 @@ class Comments extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_item',$this->id_item);
 		$criteria->compare('date_add',$this->date_add);
-		$criteria->compare('id_user',$this->id_user);
+		$criteria->compare('name_user',$this->name_user, true);
 		$criteria->compare('text',$this->text,true);
 
 		return new CActiveDataProvider($this, array(

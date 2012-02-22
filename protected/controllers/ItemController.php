@@ -18,6 +18,7 @@ class ItemController extends Controller
     {
         $item = Item::model()->findByPk($id_item);
         $model = new Orders();
+        $comment = new Comments();
         $user = new Users();
         
 		if(isset($_POST['Orders']) && isset($_POST['Users']))
@@ -56,7 +57,7 @@ class ItemController extends Controller
         Yii::app()->getClientScript()->registerCoreScript('jquery');
 
         $this->render('one',array(
-			'item'=>$item, 'model'=>$model, 'user'=>$user,
+			'item'=>$item, 'model'=>$model, 'user'=>$user, 'comment'=>$comment,
 		));
     }
 }
