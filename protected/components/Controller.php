@@ -47,4 +47,30 @@ class Controller extends CController
         }
         return $pass;
     }
+
+    public function cutString($string, $maxlen) {
+        $len = (mb_strlen($string) > $maxlen)
+            ? mb_strripos(mb_substr($string, 0, $maxlen), ' ')
+            : $maxlen
+        ;
+        $cutStr = mb_substr(strip_tags($string), 0, $len);
+        return (mb_strlen($string) > $maxlen)
+            ? $cutStr . '...'
+            : $cutStr
+        ;
+    }
+
+    public function commentsList($id_item)
+    {
+        $criteria=new CDbCriteria;
+
+		$criteria->compare('id_item',$id_item);
+
+        $dataProvider=new CActiveDataProvider('Comments', array(
+			'criteria'=>$criteria,
+		));
+		return $this->renderPartial('application.views.item._comments',array(
+			'dataProvider'=>$dataProvider,
+		), false,true);
+    }
 }

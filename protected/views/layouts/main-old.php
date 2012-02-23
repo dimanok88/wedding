@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
+
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
@@ -20,37 +21,33 @@
 <body>
 
 <div class="container" id="page">
-
-    <div id="header">
+	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-	<div>
-		<?php $this->widget('application.extensions.mbmenu.MbMenu',array(
+    <? $this->widget('application.components.MenuMain');?>
+
+	<div id="mainmenu">
+		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				//array('label'=>'Главная', 'url'=>array('')),
-				array('label'=>'Контент', 'url'=>array('default/'),
-                    'items'=>array(
-                         array('label' => 'Тип контента', 'url' => array('typeItem/')),
-                         array('label'=>'Страницы', 'url'=>array('pages/index', 'type'=>'page')),
-                         array('label'=>'Новости', 'url'=>array('pages/index', 'type'=>'news')),
-                     ),
-                ),
-				array('label'=>'Пользователи', 'url'=>array('users/')),
-                array('label'=>'Бронирование', 'url'=>array('orders/')),
-				//array('label'=>'Login', 'url'=>array('item/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+	<?php if(isset($this->breadcrumbs)):?>
+		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+			'links'=>$this->breadcrumbs,
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+    <?php $this->widget('ext.simple-calendar.SimpleCalendarWidget'); ?>
 
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
-
-	<div id="footer">
-		
-	</div><!-- footer -->
 
 </div><!-- page -->
 

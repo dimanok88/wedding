@@ -54,7 +54,7 @@ $this->menu=array(
                 ),
                 'update'=>array(
                    'label'=>'Редактировать',
-                   'url'=>'Yii::app()->createUrl("contedit/pages/create", array("id"=>$data->id))',
+                   'url'=>'Yii::app()->createUrl("contedit/pages/create", array("id"=>$data->id,"type"=>"'.$type.'"))',
                 ),
                 /*'update' => array
                 (

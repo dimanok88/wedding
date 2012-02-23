@@ -1,0 +1,137 @@
+/*--------------------------
+#
+# created by MNP
+# url: www.mynetplatform.com
+# icq: 224454617
+# skype: ciuvir
+#
+------------------------  */
+
+html, body, div, span, p, img {margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit}
+
+html, body {height: 100%}
+body {font: 11px/13px Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif; color:#000; background: #e8eeef url(../resources/images/bg.jpg) repeat center center; min-width: 1000px}
+
+a {outline: none; color: #000}
+a:hover {text-decoration: none}
+
+.row {overflow: hidden}
+.fll {float: left; display: inline}
+.flr {float: right; display: inline}
+.t_center {text-align: center}
+.t_right{text-align: right}
+
+.header .bot .news_place .item, 
+.left-block, 
+h1,
+.content .item .tel,
+.footer .up {font: 11px/13px Georgia, 'Century Schoolbook L', Serif}
+
+h1 {font-size: 20px; line-height: 41px; background: #d3e5ea; padding: 0 0 0 17px; position: relative; margin: 0 0 39px}
+h1 .img {position: absolute; right: -50px; top: -37px; width: 100px; height: 102px; background: url(../resources/images/slider-disc.png) no-repeat 0 -102px; text-align: center}
+h1 .date {position: absolute; right: 35px; top: 0px; width: 100px; text-align: center}
+h1 .img img {margin: 17px 0 0}
+
+.round_4, 
+.header .bot .news_place .item .date p {-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px}
+h1, .left-block ul li a {-moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px}
+
+/* structure
+----------------------------------------------------------------------------------------*/
+.wrapper {margin: 0 auto -132px; min-height:100%; height:auto !important; height:100%}
+.container {overflow: hidden; width: 100%; position: relative}
+.content-bg {float: left; width: 100%}
+.down, .footer {height: 132px}
+
+.header .top .in, 
+.header .bot .in, 
+.container .out,
+.footer .in {width: 998px; margin: 0 auto}
+
+.ornament {position: absolute; left: 0; bottom: 0; width: 100%; height: 37px; background: url(../resources/images/ornament.png) no-repeat center 0}
+.flower {position: absolute; width: 100%; background: url(../resources/images/flower.png) no-repeat 0 0; width: 58px; height: 62px}
+
+/* header
+----------------------------------------------------------------------------------------*/
+.header {background: url(../resources/images/bg-h.jpg) repeat-x center 0}
+.header .top {height: 45px; position: absolute; width: 100%}
+.header .top .in {position: relative; z-index: 10}
+.header .top a {color: #0a273f}
+.header .top .fll, .header .top .flr {background: #f2f8fb}
+.header .top .fll {margin: 9px 0 0 19px; padding: 8px 16px 8px 14px}
+.header .top .flr {margin: 9px 46px 0 0; padding: 5px 8px 7px 9px}
+
+.header .mid {width: 100%; position: relative; padding: 45px 0 0}
+
+.header .side_l {width: 1144px; float: left; left: 50%; position: relative}
+.header .side_r {width: 1144px; float: left; left: -50%; position: relative}
+
+.header .mid .flower {top: -35px; right: 60px}
+.header .mid .in {background: url(../resources/images/bg-mid.jpg) no-repeat 0 0; height: 548px}
+.header .mid .logo {width: 492px; height: 147px; margin: 26px 0 0; position: relative}
+.header .mid .logo a {position: absolute; left: 38px; bottom: 24px; width: 305px; height: 55px; text-indent: -9999px}
+.header .mid .logo em {position: absolute; left: 82px; top: 47px; width: 284px; height: 19px; color: #fff; text-align: center; font-size: 12px; line-height: 17px}
+
+.header .bot_place {margin: -260px 0 0; position: relative}
+.header .bot {background: url(../resources/images/bg-h-bot.png) repeat-x 0 48px; height: 212px; position: relative; width: 100%; padding: 48px 0 0}
+.header .bot .in {position: relative}
+.header .bot .news_place {margin: 9px 0 0 19px}
+.header .bot .news_place .title {width: 102px; height: 24px; background: url(../resources/images/news.png) no-repeat 0 0; text-indent: -9999px}
+.header .bot .news_place .item {padding: 7px 0 0; width: 240px; margin: 0 0 0 6px}
+.header .bot .news_place .item .date span {background: #e2dde6; float: right; display: inline; padding: 1px 5px 5px}
+.header .bot .news_place .item p {margin: 0 50px 0 0; padding: 0 0 2px}
+.header .bot .news_place .item .t_right a {color: #3c5e7b; font-size: 10px}
+
+.header .bot .slider_place {position: absolute; right: -20px; top: -48px; width: 682px; height: 179px; padding: 82px 0 0 71px; background: url(../resources/images/bg-slider.png) no-repeat 0 0}
+.header .bot .slider_place .flr.title {width: 293px; height: 35px; background: url(../resources/images/catalog.png) no-repeat 0 0; text-indent: -9999px; margin: -43px 59px 0 0}
+.header .bot .slider_place .in {position: relative}
+.header .bot .slider_place ul {list-style: none; margin: 0; padding: 0}
+.header .bot .slider_place ul li {float: left; display: inline; width: 100px; margin: 0; padding: 0}
+.header .bot .slider_place ul li a {text-decoration: none}
+.header .bot .slider_place ul li a span {display: block; text-align: center; margin: -1px 0 0}
+.header .bot .slider_place ul li a .img {width: 100px; height: 102px; background: url(../resources/images/slider-disc.png) no-repeat 0 0}
+.header .bot .slider_place ul li a .img img {margin: 20px 0 0}
+.header .bot .slider_place ul li a:hover .img {background-position: 0 -102px}
+.header .bot .slider_place ul li a .title {padding: 0 6px}
+.header .bot .slider_place .next {width: 31px; height: 48px; position: absolute; right: -36px; top: 25px; background: url(../resources/images/slider-btn.png) no-repeat -31px 0; text-indent: -9999px}
+.header .bot .slider_place .prev {width: 31px; height: 48px; position: absolute; left: -36px; top: 25px; background: url(../resources/images/slider-btn.png) no-repeat 0 0; text-indent: -9999px}
+
+
+/* content
+----------------------------------------------------------------------------------------*/
+.container {padding: 14px 0 16px}
+.container .out {position: relative}
+.container .in {background: url(../resources/images/white.png) repeat 0 0; padding: 30px 0 0}
+.container .flower {bottom: -19px; right: -12px}
+.content {margin: 0 70px 0 232px; padding: 31px 0 75px}
+
+.content .item {margin: 0 51px 45px 7px; position: relative; min-height: 97px}
+.content .item .t_center img {margin: 0 0 -2px}
+.content .item .name {padding: 0 7px 20px 0; height: 20px; position: relative}
+.content .item .name a {display: block; width: 283px; height: 20px; background: url(../resources/images/name.png) no-repeat 0 0; color: #fbe5e8; text-decoration: none; font-size: 12px; line-height: 18px; text-align: center; float: right; display: inline}
+.content .item .name a:hover {background-position: 0 -20px}
+.content .item .name b {position: absolute; right: 165px; top: 27px; width: 165px; height: 16px; background: url(../resources/images/name-line.png) no-repeat 0 0}
+.content .item .tel {position: absolute; right: 15px; top: 32px; color: #2c4861; font-size: 20px; line-height: 20px; text-align: right}
+.content .item .price {color: #0a243a; font-size: 16px; position: absolute; right: -49px; bottom: 9px; width: 119px; height: 52px; line-height: 52px; text-align: center; background: url(../resources/images/price.png) no-repeat 0 0}
+.content .item .line {width: 313px; height: 2px; font-size: 0; line-height: 0; background: url(../resources/images/line.png) no-repeat 0 0}
+
+/* left
+----------------------------------------------------------------------------------------*/
+.left-block {float: left; width: 168px; margin-left: -100%; font-size: 15px; line-height: 30px; padding: 0 0 0 25px}
+.left-block .title {font-size: 20px}
+.left-block ul {list-style: none; margin: 0; padding: 10px 0 0}
+.left-block ul li {margin: 0; padding: 0; text-align: right}
+.left-block ul li a {display: block; padding: 0 10px 0 0; text-decoration: none; margin: 0 0 1px}
+.left-block ul li a span {display: block; background: url(../resources/images/li.gif) no-repeat 9px 7px}
+.left-block ul li a:hover, .left-block ul li.active a {background: url(../resources/images/gray.png) repeat 0 0}
+
+/* footer
+----------------------------------------------------------------------------------------*/
+.footer {background: url(../resources/images/bg-f.png) repeat-x 0 bottom}
+.footer .in {position: relative}
+.footer .chair {position: absolute; left: 9px; top: -59px; width: 123px; height: 191px; background: url(../resources/images/chair.png) no-repeat 0 0}
+.footer .counter {margin: 0 0 0 200px; width: 101px; height: 117px; background: url(../resources/images/counter.png) no-repeat 0 0; padding: 15px 0 0 14px}
+.footer .up {width: 82px; height: 89px; text-align: center; margin: 43px 3px 0 0; background: url(../resources/images/up.png) no-repeat 0 0}
+.footer .up a {display: block; margin: 8px 0 0; line-height: 29px; text-decoration: none}
+.footer .up a span {text-decoration: underline}
+.footer .up a:hover span {text-decoration: none}

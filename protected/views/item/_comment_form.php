@@ -1,10 +1,15 @@
+<?
+if(isset($_GET['id_item'])) $id = $_GET['id_item'];
+else $id = $_GET['page']
+?>
 <div class="form">
+
 
     <h1>Комментарии</h1>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'comments-form',
-    'action'=>array('comments/add', 'type'=>$_GET['type'], 'id_item'=>$_GET['id_item'])
+    'action'=>array('comments/add', 'type'=>$_GET['type'], 'id_item'=>$id)
 	//'enableAjaxValidation'=>false,
 )); ?>
 

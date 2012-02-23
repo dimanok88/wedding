@@ -194,9 +194,11 @@ class Users extends CActiveRecord
         return $name;
     }
 
-    public function getDate($time)
+    public function getDate($time,$short=false)
     {
-        $time = date('Y-m-d H:i:s', $time);
+        if($short == true) $time = date('Y.m.d', $time);
+        else $time = date('Y-m-d H:i:s', $time);
+        
         return $time;
     }
 

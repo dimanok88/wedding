@@ -32,6 +32,13 @@ class Pages extends CActiveRecord
 		return 'pages';
 	}
 
+    public function beforeSave() {
+	    if ($this->isNewRecord) {
+	        $this->date = time();
+	    }
+
+	    return parent::beforeSave();
+	}
 	/**
 	 * @return array validation rules for model attributes.
 	 */

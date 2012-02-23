@@ -17,6 +17,8 @@
 
 <?php echo $this->renderPartial('_comment_form', array('comment'=>$comment)); ?>
 
+<?php $this->commentsList($item->id); ?>
+
 <?
 $cs = Yii::app()->clientScript;
 // регистрация css-ресурсов
