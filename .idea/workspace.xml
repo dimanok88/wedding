@@ -2,62 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bad796e-f543-4792-88c3-cb8dd683ca5d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/bg-f.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/bg-h-bot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/bg-h.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/bg-mid.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/bg-slider.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/bg-slider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog/01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog/02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog/04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog/05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/chair.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/counter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/flower.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/li.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/name-line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/name.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/news.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/ornament.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/other/01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/other/02.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/other/share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/price.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/slider-btn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/slider-disc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/MenuLeft.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/NewsBlock.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/ServicesBlock.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/views/MenuLeft.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/views/ServicesBlock.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/views/newsBlock.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/controllers/PagesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/item/_comments.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/item/_view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/layouts/main-old.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/pages/view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/slider.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/screen.css" afterPath="$PROJECT_DIR$/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/Controller.php" afterPath="$PROJECT_DIR$/protected/components/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Pages.php" afterPath="$PROJECT_DIR$/protected/models/Pages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Users.php" afterPath="$PROJECT_DIR$/protected/models/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/contedit/views/layouts/main.php" afterPath="$PROJECT_DIR$/protected/modules/contedit/views/layouts/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/contedit/views/pages/admin.php" afterPath="$PROJECT_DIR$/protected/modules/contedit/views/pages/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/item/_comment_form.php" afterPath="$PROJECT_DIR$/protected/views/item/_comment_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/item/one.php" afterPath="$PROJECT_DIR$/protected/views/item/one.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/main.php" afterPath="$PROJECT_DIR$/protected/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/views/ServicesBlock.php" afterPath="$PROJECT_DIR$/protected/components/views/ServicesBlock.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="view.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/pages/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="220" selection-end="220" vertical-scroll-proportion="0.19788918">
+            <state line="10" column="4" selection-start="220" selection-end="220" vertical-scroll-proportion="-6.25">
               <folding />
             </state>
           </provider>
@@ -112,6 +58,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="61" column="5" selection-start="1933" selection-end="1933" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServicesBlock.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/components/views/ServicesBlock.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="56" selection-start="311" selection-end="311" vertical-scroll-proportion="0.11873351">
+              <folding>
+                <marker date="1330018537000" expanded="true" signature="116:253" placeholder="..." />
+                <marker date="1330018537000" expanded="true" signature="116:253" placeholder="..." />
+                <marker date="1330018537000" expanded="true" signature="203:246" placeholder="..." />
+                <marker date="1330018537000" expanded="true" signature="203:246" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,15 +112,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/item/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="one.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/item/one.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -186,7 +137,6 @@
       <list>
         <option value="$PROJECT_DIR$/protected/models/Users.php" />
         <option value="$PROJECT_DIR$/protected/components/ServicesBlock.php" />
-        <option value="$PROJECT_DIR$/protected/components/views/ServicesBlock.php" />
         <option value="$PROJECT_DIR$/protected/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/resources/js/slider.js" />
         <option value="$PROJECT_DIR$/protected/components/NewsBlock.php" />
@@ -200,6 +150,7 @@
         <option value="$PROJECT_DIR$/protected/views/item/_comments.php" />
         <option value="$PROJECT_DIR$/protected/views/item/_view.php" />
         <option value="$PROJECT_DIR$/protected/views/pages/view.php" />
+        <option value="$PROJECT_DIR$/protected/components/views/ServicesBlock.php" />
       </list>
     </option>
   </component>
@@ -659,6 +610,7 @@
     <frame x="-1" y="24" width="1282" height="977" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -673,7 +625,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -704,7 +655,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments, design, etc" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -721,18 +672,12 @@
     <MESSAGE value="бронирование, пользователи и т.д." />
     <MESSAGE value="upload pitures" />
     <MESSAGE value="comments" />
+    <MESSAGE value="comments, design, etc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/components/NewsBlock.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="199" column="13" selection-start="5609" selection-end="5609" vertical-scroll-proportion="0.0">
@@ -796,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/ItemController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="5" selection-start="1933" selection-end="1933" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/item/one.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="40" selection-start="544" selection-end="544" vertical-scroll-proportion="-11.875">
@@ -833,8 +771,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/pages/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="220" selection-end="220" vertical-scroll-proportion="0.19788918">
+        <state line="10" column="4" selection-start="220" selection-end="220" vertical-scroll-proportion="-6.25">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/ItemController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="5" selection-start="1933" selection-end="1933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/views/ServicesBlock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="56" selection-start="311" selection-end="311" vertical-scroll-proportion="0.11873351">
+          <folding>
+            <marker date="1330018537000" expanded="true" signature="116:253" placeholder="..." />
+            <marker date="1330018537000" expanded="true" signature="116:253" placeholder="..." />
+            <marker date="1330018537000" expanded="true" signature="203:246" placeholder="..." />
+            <marker date="1330018537000" expanded="true" signature="203:246" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
