@@ -40,7 +40,7 @@ class UserIdentity extends CUserIdentity
         {
             $this->_id = $user->id;
             $this->username = $user->name;
-            $this->setState('content_id', $user->content_id);
+            //$this->setState('content_id', $user->content_id);
 			$this->errorCode = self::ERROR_NONE;
         }
 

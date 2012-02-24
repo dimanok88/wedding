@@ -31,10 +31,10 @@ class ContController extends CController
 
     public function init()
     {
-        if (Yii::app()->user->checkAccess('moderator', array('content_id'=>Yii::app()->user->content_id))) {
-            $this->redirect(array('contedit/item/index'));
+        if (Yii::app()->user->checkAccess('moderator', array('content_id'=>Yii::app()->user->content))) {
+            
         }
-        else throw new CHttpException(403, 'Forbidden');
+        else throw new CHttpException(403);
     }
 
 	/**

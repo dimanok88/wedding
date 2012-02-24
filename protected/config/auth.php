@@ -21,7 +21,7 @@ return array(
         'children' => array(
             'user',          // позволим модератору всё, что позволено пользователю
         ),
-        'bizRule' => null,
+        'bizRule' => 'return Yii::app()->user->content==$params["content_id"]',
         'data' => null
     ),
     'admin' => array(

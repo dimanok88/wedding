@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
 </head>
 <body>
-<? if(isset(Yii::app()->user->content_id)) echo Yii::app()->user->content_id;?>
+<? if(isset(Yii::app()->user->content)) echo Yii::app()->user->content;?>
 <div class="wrapper">
 	<!-- start HEADER -->
 	<div class="header">

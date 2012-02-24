@@ -22,6 +22,7 @@ return array(
 	'components'=>array(
         //'dateFormatter'=>array('class'=>'CDateFormatter', 'params'=>array('ru')),
 		'user'=>array(
+            'class' => 'WebUser',
 			'allowAutoLogin' => true,
             'loginUrl' => array('site/login'),
 		),
