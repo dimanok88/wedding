@@ -1,8 +1,5 @@
 <?php
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
+$this->pageTitle="Авторизация";
 ?>
 
 <h1>Вход</h1>

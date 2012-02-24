@@ -43,6 +43,7 @@ class Item extends CActiveRecord
 			array('name, description, price, active', 'required'),
 			array('active, type', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
+            array('meta_title, meta_keywords, meta_desc' ,'default'),
 			array('name', 'length', 'max'=>60),
             array('file, foto' , 'file', 'types'=>'jpg, gif, png, jpeg', 'allowEmpty' => true),
 			// The following rule is used by search().
@@ -84,6 +85,9 @@ class Item extends CActiveRecord
 			'price' => 'Цена за час',
 			'date_add' => 'Дата добавления',
 			'active' => 'Вкл.',
+            'meta_title' => 'Заголовок',
+            'meta_keywords' => 'Ключевые слова',
+            'meta_desc' => 'Описание',
 		);
 	}
 
@@ -107,6 +111,10 @@ class Item extends CActiveRecord
 		$criteria->compare('date_add',$this->date_add,true);
 		$criteria->compare('active',$this->active);
         $criteria->compare('type',$type);
+
+        $criteria->compare('meta_title',$this->meta_title,true);
+		$criteria->compare('meta_keywords',$this->meta_keywords,true);
+        $criteria->compare('meta_desc',$this->meta_desc,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

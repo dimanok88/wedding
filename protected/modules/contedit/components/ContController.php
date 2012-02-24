@@ -29,6 +29,14 @@ class ContController extends CController
 		);
 	}
 
+    public function init()
+    {
+        if (Yii::app()->user->checkAccess('moderator', array('content_id'=>Yii::app()->user->content_id))) {
+            $this->redirect(array('contedit/item/index'));
+        }
+        else throw new CHttpException(403, 'Forbidden');
+    }
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.

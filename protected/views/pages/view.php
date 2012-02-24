@@ -1,4 +1,8 @@
 <?
+$this->title= $page->meta_title;
+$this->pageDesc= $page->description;
+$this->pageKey= $page->keywords;
+
 $date = '';
 if($page->type == 'news') $date = '<span class="date">'.Users::model()->getDate($page->date, true).'</span>';
 ?>

@@ -21,6 +21,12 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
 
+    public $title;
+    public $pageKey;
+
+    public $pageDesc;
+
+
     public function generate_password($number = 5)
     {
         $arr = array('a', 'b', 'c', 'd', 'e', 'f',
@@ -73,4 +79,10 @@ class Controller extends CController
 			'dataProvider'=>$dataProvider,
 		), false,true);
     }
+
+    public function getOptions($name)
+	{
+		$options = Options::model()->find('sys_name=:name', array(':name'=>$name));
+		return $options->value;
+	}
 }

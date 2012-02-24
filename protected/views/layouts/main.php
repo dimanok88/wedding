@@ -2,8 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content=""/>
+
+    <?
+    $this->pageTitle = $this->getOptions('meta_title');
+
+	if(empty($this->title)) $this->title = $this->pageTitle;
+    else $this->title = $this->title." ".$this->getOptions('meta_title');
+	if(empty($this->pageKey)) $this->pageKey = $this->getOptions('meta_keywords');
+	if(empty($this->pageDesc)) $this->pageDesc = $this->getOptions('meta_description');
+    ?>
+
+	<title><?php echo CHtml::encode($this->title); ?></title>
+	<?= CHtml::metaTag( $this->pageKey, 'keywords')?>
+	<?= CHtml::metaTag( $this->pageDesc, 'description')?>
+
     	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
@@ -13,12 +25,10 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-    
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
 </head>
 <body>
+<? if(isset(Yii::app()->user->content_id)) echo Yii::app()->user->content_id;?>
 <div class="wrapper">
 	<!-- start HEADER -->
 	<div class="header">
@@ -34,7 +44,7 @@
 			<div class="side_l"><div class="side_r">
 				<div class="in">
 					<div class="flower"></div>
-					<div class="flr logo"><a href="#">Свадьба Воронеж</a><em>Информационный свадебный портал</em></div>
+					<div class="flr logo"><a href="/">Свадьба Воронеж</a><em>Информационный свадебный портал</em></div>
 				</div>	
 			</div></div>
 		</div>

@@ -1,3 +1,8 @@
+<?
+$this->title= $page->meta_title;
+$this->pageDesc= $page->description;
+$this->pageKey= $page->keywords;
+?>
 <h1><?= $item->name; ?></h1>
 
     <?= Pictures::model()->AllPic($item->id)?>

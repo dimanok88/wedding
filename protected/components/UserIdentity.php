@@ -27,7 +27,7 @@ class UserIdentity extends CUserIdentity
             return !$this->errorCode;
         }
 
-        $user = Users::model()->find('`login` = :login AND active=1 AND code_active!=""', array(':login' => $this->username,));
+        $user = Users::model()->find('`login` = :login AND active=1', array(':login' => $this->username,));
 		if( is_null($user) )
         {
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
@@ -40,6 +40,7 @@ class UserIdentity extends CUserIdentity
         {
             $this->_id = $user->id;
             $this->username = $user->name;
+            $this->setState('content_id', $user->content_id);
 			$this->errorCode = self::ERROR_NONE;
         }
 

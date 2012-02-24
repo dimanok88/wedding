@@ -38,6 +38,7 @@
                 ),
 				array('label'=>'Пользователи', 'url'=>array('users/')),
                 array('label'=>'Бронирование', 'url'=>array('orders/')),
+                array('label'=>'Настройки', 'url'=>array('options/')),
 				//array('label'=>'Login', 'url'=>array('item/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

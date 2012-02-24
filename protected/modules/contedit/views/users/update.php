@@ -74,7 +74,7 @@
 
                 <div class="row">
                     <?php echo $form->labelEx($model,'content_id'); ?>
-                    <?php echo $form->dropDownList($model, 'content_id', TypeItem::model()->AllTypeItem()); ?>
+                    <?php echo $form->dropDownList($model, 'content_id', Item::model()->AllItems()); ?>
                     <?php echo $form->error($model,'content_id'); ?>
                 </div>
 

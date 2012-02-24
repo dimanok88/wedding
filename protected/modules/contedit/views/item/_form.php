@@ -99,6 +99,24 @@
         ?>
     </div>
 
+    <div class="row">
+		<?php echo $form->labelEx($model,'meta_title'); ?>
+		<?php echo $form->textField($model,'meta_title'); ?>
+		<?php echo $form->error($model,'meta_title'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'meta_keywords'); ?>
+		<?php echo $form->textField($model,'meta_keywords'); ?>
+		<?php echo $form->error($model,'meta_keywords'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'meta_desc'); ?>
+		<?php echo $form->textField($model,'meta_desc'); ?>
+		<?php echo $form->error($model,'meta_desc'); ?>
+	</div>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'active'); ?>
 		<?php echo $form->checkBox($model,'active'); ?>
