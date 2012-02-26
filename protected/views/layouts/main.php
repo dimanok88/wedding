@@ -29,6 +29,7 @@
 </head>
 <body>
 <? if(isset(Yii::app()->user->content)) echo Yii::app()->user->content;?>
+<? if(isset(Yii::app()->user->role)) echo Yii::app()->user->role;?>
 <div class="wrapper">
 	<!-- start HEADER -->
 	<div class="header">

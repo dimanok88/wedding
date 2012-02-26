@@ -29,12 +29,12 @@ class ContController extends CController
 		);
 	}
 
-    public function init()
+   /* public function init()
     {
         if (!Yii::app()->user->checkAccess('moderator', array('content_id'=>Yii::app()->user->content))) {
             throw new CHttpException(403);
         }
-    }
+    }*/
 
 	/**
 	 * Specifies the access control rules.
@@ -44,13 +44,20 @@ class ContController extends CController
 	public function accessRules()
 	{
 		return array(
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				//'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
+			 array('allow',
+                'roles'=>array('admin'),
+            ),
+            array('allow',
+                'controllers'=>array('orders'),
+                'actions'=>array('index', 'admin', 'view'),
+                'roles'=>array('moderator'),
+            ),
+            array('deny',
+                'roles'=>array('guest'),
+            ),
+            array('deny',  // deny all users
+              'users'=>array('*'),
+            ),
 		);
 	}
 }

@@ -202,6 +202,17 @@ class Users extends CActiveRecord
         return $time;
     }
 
+    public function AllUsers()
+    {
+        $users = $this->findAll();
+        $new_list_users = array();
+        foreach($users as $user){
+            $new_list_users[$user['id']] = $user['name']."(".$user['phone'].")";
+        }
+
+        return $new_list_users;
+    }
+
     public function SendMail()
     {
         $email = Yii::app()->email;

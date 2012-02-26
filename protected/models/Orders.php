@@ -102,19 +102,22 @@ class Orders extends CActiveRecord
 	 */
 	public function search()
 	{
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('id',$this->id);
+        $criteria->compare('id_user',$this->id_user);
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
+        if (Yii::app()->user->checkAccess('moderator') && !Yii::app()->user->checkAccess('admin')) {
+            $criteria->compare('id_item',Yii::app()->user->content);
+        }
+        else $criteria->compare('id_item',$this->id_item);
 
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_user',$this->id_user);
-		$criteria->compare('id_item',$this->id_item);
-		$criteria->compare('date_brony',$this->date_brony,true);
+        $criteria->compare('date_brony',$this->date_brony,true);
         $criteria->compare('date_brony_end',$this->date_brony_end,true);
-		$criteria->compare('total_hours',$this->total_hours);
-		$criteria->compare('date_add',$this->date_add,true);
-		$criteria->compare('total_price',$this->total_price);
+        $criteria->compare('total_hours',$this->total_hours);
+        $criteria->compare('date_add',$this->date_add,true);
+        $criteria->compare('total_price',$this->total_price);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
