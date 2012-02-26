@@ -32,6 +32,7 @@ class Comments extends CActiveRecord
 
     public function beforeSave() {
 	    if ($this->isNewRecord) {
+            $this->text = strip_tags($this->text);
 	        $this->date_add = time();
 	    }
 

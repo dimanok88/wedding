@@ -2,10 +2,10 @@
 if(isset($_GET['id_item'])) $id = $_GET['id_item'];
 else $id = $_GET['page']
 ?>
-<div class="form">
+<div class="form comments">
 
 
-    <h1>Комментарии</h1>
+<h1>Комментарии</h1>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'comments-form',
@@ -27,7 +27,7 @@ else $id = $_GET['page']
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Добавить'); ?>
+		<?php echo CHtml::submitButton('Комментировать'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

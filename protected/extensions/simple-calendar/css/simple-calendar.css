@@ -1,4 +1,4 @@
-#calendar { width: 300px;}
+#calendar { width: 300px; right: 30px;}
 #calendar th, #calendar td{
     text-align: center;
 }
@@ -7,6 +7,12 @@
     background-color: #fff;
 }
 
+#calendar .month-year-row { background-color: #D3E5EA !important;}
+#calendar .month-year-row th { background: none;}
+
 #calendar .calendar-selected-day {
     font-weight: bold;
 }
+#calendar .date_free { background: #ccffcc;}
+#calendar .date_succ { background: #ff9999;}
+#calendar .date_brony { background-color: #D3E5EA;}

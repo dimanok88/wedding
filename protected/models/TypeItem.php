@@ -94,4 +94,11 @@ class TypeItem extends CActiveRecord
 
         return $new_list_items;
     }
+
+    public function TitleType($id)
+    {
+        $type = $this->findByPk($id);
+
+        return $type->title;
+    }
 }

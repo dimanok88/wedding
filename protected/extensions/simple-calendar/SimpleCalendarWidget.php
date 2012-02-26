@@ -106,7 +106,7 @@ class SimpleCalendarWidget extends CWidget {
     }
     
     public function getFirstDayOfTheWeek() {
-        $firstDayTimestamp = CDateTimeParser::parse("{$this->year}-{$this->month}-1", 'yyyy-M-d');
+        $firstDayTimestamp = CDateTimeParser::parse("{$this->year}-{$this->month}", 'yyyy-M-d');
         return date('w', $firstDayTimestamp);
     }
     

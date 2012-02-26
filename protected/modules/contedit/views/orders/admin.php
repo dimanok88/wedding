@@ -42,12 +42,26 @@ $this->menu=array(
 		array(
             'header'=>'Действия',
 			'class'=>'CButtonColumn',
-            'template' => '{view}{update} {delete}',
+            'template' => '{succ}{unsucc}<br/>{view}{update} {delete}',
             'buttons'=>array
              (
                 'update'=>array(
                    'label'=>'Редактировать',
                    'url'=>'Yii::app()->createUrl("contedit/orders/create", array("id"=>$data->id))',
+                ),
+                'succ'=>array(
+                    'label'=>'Отменить',
+                    'imageUrl'=>'/resources/images/succ.png',
+                    'options'=>array('class'=>'succ'),
+                    'url'=>'Yii::app()->createUrl("contedit/orders/succ", array("id"=>$data->id))',
+                    'visible'=>'$data->succ_time == 1',
+                ),
+                'unsucc'=>array(
+                    'label'=>'Принять',
+                    'imageUrl'=>'/resources/images/fail.png',
+                    'options'=>array('class'=>'succ'),
+                    'url'=>'Yii::app()->createUrl("contedit/orders/unsucc", array("id"=>$data->id))',
+                    'visible'=>'$data->succ_time != 1',
                 ),
                 /*'update' => array
                 (
@@ -58,3 +72,25 @@ $this->menu=array(
 		),
 	),
 )); ?>
+
+
+<?
+Yii::app()->clientScript->registerScript('succ', "
+jQuery('#orders-grid a.succ').live('click',function() {
+	//if(!confirm('Вы уверены, что хотите отменить бронирование?')) return false;
+	var th=this;
+	var afterDelete=function(){};
+	$.fn.yiiGridView.update('orders-grid', {
+		type:'POST',
+		url:$(this).attr('href'),
+		success:function(data) {
+			$.fn.yiiGridView.update('orders-grid');
+			afterDelete(th,true,data);
+		},
+		error:function(XHR) {
+			return afterDelete(th,false,XHR);
+		}
+	});
+	return false;
+});");
+?>

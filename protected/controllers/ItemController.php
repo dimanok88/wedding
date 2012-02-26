@@ -10,7 +10,7 @@ class ItemController extends Controller
 		$model= Item::model()->findAll('type=:t AND active=1', array(':t'=>$id));
 
 		$this->render('index',array(
-			'model'=>$model,
+			'model'=>$model,'id'=>$id
 		));
 	}
 

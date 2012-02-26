@@ -59,12 +59,12 @@ class Orders extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_user, id_item, total_hours, date_brony', 'required'),
-			array('id_user, id_item, total_hours, date_brony_end', 'numerical', 'integerOnly'=>true),
+			array('id_user, id_item, total_hours, date_brony_end, succ_time', 'numerical', 'integerOnly'=>true),
 			array('total_price', 'numerical'),
 			//array('date_brony', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_user, date_brony_end,id_item, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
+			array('id, id_user, date_brony_end,id_item, succ_time, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -93,6 +93,7 @@ class Orders extends CActiveRecord
 			'total_hours' => 'Количество часов',
 			'date_add' => 'Дата Добавления',
 			'total_price' => 'Общая сумма',
+            'succ_time' => 'Принято',
 		);
 	}
 
@@ -118,6 +119,7 @@ class Orders extends CActiveRecord
         $criteria->compare('total_hours',$this->total_hours);
         $criteria->compare('date_add',$this->date_add,true);
         $criteria->compare('total_price',$this->total_price);
+        $criteria->compare('succ_time',$this->succ_time);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -130,6 +132,32 @@ class Orders extends CActiveRecord
         $total = $hour * $content['price'];
 
         return $total;
+    }
+
+    public function dateBrony($id_item){
+        $date = $this->findAll('id_item=:id_i', array(':id_i'=>$id_item));
+        $array_date = array();
+
+        foreach($date as $d)
+        {
+            $f_date = Users::model()->getDate($d->date_brony, true);
+            $array_date[$d->id] = CDateTimeParser::parse($f_date,'yyyy.MM.dd');
+        }
+
+        return $array_date;
+    }
+
+    public function dateSucc($id_item){
+        $date = $this->findAll('id_item=:id_i AND succ_time="1"', array(':id_i'=>$id_item));
+        $array_date = array();
+
+        foreach($date as $d)
+        {
+            $f_date = Users::model()->getDate($d->date_brony, true);
+            $array_date[$d->id] = CDateTimeParser::parse($f_date,'yyyy.MM.dd');
+        }
+
+        return $array_date;
     }
 
     public function SuccesTime($brony, $id = '')

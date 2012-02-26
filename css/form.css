@@ -36,6 +36,7 @@
 
 div.form
 {
+    
 }
 
 div.form input,
@@ -62,7 +63,7 @@ div.form label
 
 div.form .row
 {
-	margin: 5px 0;
+	margin: 0px 0;
 }
 
 div.form .hint

@@ -237,10 +237,11 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
 
-#pic_admin { list-style-type: none; margin: 0; padding: 0;}
+#pic_admin { list-style-type: none; margin: 0; padding: 0; width: 800px;}
 #pic_admin li { display: inline-block; vertical-align: bottom; text-align: center; margin: 10px;}
 
 .main_pic{ float: left;}
-.pic_thumb { float: right;}
+.pic_thumb { float: right; width: 330px;}
+.pic_thumb img { margin: 5px;}
 
 #calendar { position: absolute; right: 0;}

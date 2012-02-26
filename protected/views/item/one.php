@@ -1,14 +1,14 @@
 <?
-$this->title= $page->meta_title;
-$this->pageDesc= $page->description;
-$this->pageKey= $page->keywords;
+$this->title= $item->meta_title;
+$this->pageDesc= $item->meta_desc;
+$this->pageKey= $item->meta_keywords;
 ?>
 <h1><?= $item->name; ?></h1>
 
     <?= Pictures::model()->AllPic($item->id)?>
 
 <div class="clear"></div>
-<div>
+<div class="desc_item">
     <?= $item->description; ?>
 </div>
 
@@ -18,13 +18,16 @@ $this->pageKey= $page->keywords;
         </div>
     <?php endif; ?>
 
+<?php $this->widget('ext.simple-calendar.SimpleCalendarWidget'); ?>
+
 <?php echo $this->renderPartial('_brony', array('model'=>$model, 'user'=>$user)); ?>
 
 <?php echo $this->renderPartial('_comment_form', array('comment'=>$comment)); ?>
 
 <?php $this->commentsList($item->id); ?>
-
 <?
+//CVarDumper::dump(Orders::model()->dateBrony($item->id));
+
 $cs = Yii::app()->clientScript;
 // регистрация css-ресурсов
 // через указание URL

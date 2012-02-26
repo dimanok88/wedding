@@ -119,4 +119,30 @@ class OrdersController extends ContController
 			Yii::app()->end();
 		}
 	}
+
+    public function actionSucc($id)
+    {
+        if(Yii::app()->request->isPostRequest)
+		{
+			Orders::model()->updateByPk($id, array('succ_time'=>'0'));
+
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+    }
+
+    public function actionUnsucc($id)
+    {
+        if(Yii::app()->request->isPostRequest)
+		{
+			Orders::model()->updateByPk($id, array('succ_time'=>'1'));
+
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+    }
 }

@@ -49,7 +49,7 @@ class ContController extends CController
             ),
             array('allow',
                 'controllers'=>array('orders'),
-                'actions'=>array('index', 'admin', 'view'),
+                'actions'=>array('index', 'admin', 'view', 'succ','unsucc'),
                 'roles'=>array('moderator'),
             ),
             array('deny',

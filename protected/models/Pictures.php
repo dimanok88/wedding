@@ -100,8 +100,10 @@ class Pictures extends CActiveRecord
            $foto_main = $f['tmp_name']['foto'];
            $names = $f['name'] ['file'];
 
-           $imageHandler->load ( $foto_main )
-                                 ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id."_main.jpg");
+           if(!empty($foto_main)){
+                $imageHandler->load ( $foto_main )
+                                 ->save(Yii::app()->getBasePath() . '/../resources/upload/'.$id."_main.jpg",3, 100, true);
+           }
 
            $i = 0;
            foreach($files as $file){
