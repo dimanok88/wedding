@@ -15,8 +15,7 @@ body {font: 11px/13px Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif; color:#00
 a {outline: none; color: #000}
 a:hover {text-decoration: none}
 
-.back_phone_top { margin: 0 auto; width: 300px;}
-.back_phone_footer { margin: 0 auto; width: 300px;}
+.back_phone_top { margin: 10px 0 0 0; position: absolute; width: 100%; font-size: 14px; font-weight: bold;}
 
 .row {overflow: hidden}
 .fll {float: left; display: inline}

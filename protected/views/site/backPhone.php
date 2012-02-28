@@ -1,12 +1,11 @@
-<div class="form">
+<div style="width: 550px; margin: 0 auto;">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'orders-form',
 	'enableAjaxValidation'=>false,
 )); ?>
-	<?php echo $form->errorSummary($model); ?>
     <div class="row">
-         <?php echo $form->labelEx($model,'phone'); ?>
+         ОБРАТНЫЙ ЗВОНОК
          <?php $this->widget('CMaskedTextField', array(
          'name' => 'phone',
          'attribute' => 'phone',
