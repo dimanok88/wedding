@@ -31,7 +31,8 @@ class OrdersController extends ContController
 
 		if(isset($_POST['Orders']))
 		{
-			$model->attributes=$_POST['Orders'];                       
+			$model->attributes=$_POST['Orders'];
+            $model->dogovor = 1;
 			if($model->save())
             {
                 //$model->date_brony = date('Y-m-d H:i:s', $model->date_brony);

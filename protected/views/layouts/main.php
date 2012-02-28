@@ -35,6 +35,7 @@
 			<div class="in">
 				<div class="fll round_4"><a href="#">В избранное</a></div>
 				<div class="flr round_4"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/resources/images/other/share.png" alt="0" style="margin: 0 0 -4px" /></a></div>
+                <div class="back_phone_top"><? $this->renderPartial('application.views.site.backPhone', array('model'=>BackPhone::model()), false, true)?></div>
 			</div>
 		</div>
 		
@@ -98,6 +99,7 @@
 	</div>
 </div>
 <!-- end FOOTER -->
+
 
 <!-- start SCRIPTS -->
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>

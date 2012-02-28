@@ -31,10 +31,15 @@
 	</div>
 
     <div class="row">
-		<?php echo $form->labelEx($user,'phone'); ?>
-		<?php echo $form->textField($user,'phone'); ?>
-		<?php echo $form->error($user,'phone'); ?>
-	</div>
+         <?php echo $form->labelEx($user,'phone'); ?>
+         <?php $this->widget('CMaskedTextField', array(
+         'model' => $user,
+         'attribute' => 'phone',
+         'mask' => '(999)999-99-99',
+         'htmlOptions' => array('size' => 10)
+         )); ?>
+         <?php echo $form->error($user,'phone'); ?>
+    </div>
 
     <div class="row">
 		<?php echo $form->labelEx($user,'email'); ?>
@@ -46,6 +51,12 @@
 		<?php echo $form->labelEx($user,'login'); ?>
 		<?php echo $form->textField($user,'login'); ?>
 		<?php echo $form->error($user,'login'); ?>
+	</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'dogovor'); ?>
+		<?php echo $form->checkBox($model,'dogovor'); ?>
+		<?php echo $form->error($model,'dogovor'); ?>
 	</div>
 
 	<div class="row buttons">

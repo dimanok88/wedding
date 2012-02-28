@@ -13,6 +13,27 @@ class OrdersController extends Controller
 		));
 	}
 
+    public function actionBphone($phone)
+    {
+        $model=new BackPhone();
+
+		if(isset($phone))
+		{
+			$model->phone=str_replace(array('(',')','-'), '', $phone);
+            $model->date_add = time();
+            if($model->validate()){
+                if($model->save(false))
+                {
+                    echo "<span class='suc'>".CHtml::image('/resources/images/succ.png')."</span>";
+                }
+            }
+            else echo "<span class='suc'>".CHtml::image('/resources/images/fail.png')."</span>";
+            
+            echo "<script> $('.suc').animate({opacity: 1.0}, 5000).fadeOut('slow');</script>";
+		}
+        Yii::app()->end();
+    }
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

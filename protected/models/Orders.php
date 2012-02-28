@@ -14,6 +14,7 @@
  */
 class Orders extends CActiveRecord
 {
+    public $dogovor;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -58,13 +59,13 @@ class Orders extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_user, id_item, total_hours, date_brony', 'required'),
+			array('id_user, id_item, total_hours, date_brony, dogovor', 'required'),
 			array('id_user, id_item, total_hours, date_brony_end, succ_time', 'numerical', 'integerOnly'=>true),
 			array('total_price', 'numerical'),
 			//array('date_brony', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_user, date_brony_end,id_item, succ_time, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
+			array('id, id_user, date_brony_end,id_item, succ_time, dogovor, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -94,6 +95,7 @@ class Orders extends CActiveRecord
 			'date_add' => 'Дата Добавления',
 			'total_price' => 'Общая сумма',
             'succ_time' => 'Принято',
+            'dogovor' => 'Условия бронирования',
 		);
 	}
 
