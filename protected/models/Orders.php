@@ -38,6 +38,7 @@ class Orders extends CActiveRecord
 	        $this->date_add = time();
 	    }
 
+        $this->SendMail();
         $this->total_price = $this->TotalPrice($this->id_item, $this->total_hours);
         $this->date_brony = CDateTimeParser::parse($this->date_brony,'yyyy-MM-dd hh:mm:ss');
         $this->date_brony_end = $this->date_brony + $this->total_hours*3600;
@@ -169,5 +170,30 @@ class Orders extends CActiveRecord
             $all_time = $this->count('id_item=:id AND '.$br.' BETWEEN date_brony AND date_brony_end', array(":id"=>$id));
         else $all_time = array();
         return $all_time;
+    }
+
+
+    public function SendMail()
+    {
+        $email = Yii::app()->email;
+
+        $email->from = Controller::getOptions('admin_email');
+        $email->language = "ru";
+        //$email->contentType = 'utf8';
+        $email->to = Controller::getOptions('admin_email');
+        $email->subject = 'Бронирование';
+        $email->view = 'mail_brony';
+
+        $user =Users::model()->getName($this->id_user);
+		$item =Item::model()->getItem($this->id_item);
+        $date = Users::model()->getDate($this->date_brony);
+		$hours = $this->total_hours;
+
+        $email->viewVars = array('user'=>$user,
+                                 'item'=>$item,
+                                 'date'=>$date,
+                                 'hours'=>$hours,
+                            );
+        $email->send();
     }
 }

@@ -50,8 +50,8 @@ class Users extends CActiveRecord
             $this->id_user_reg = Yii::app()->user->id;
             if($this->id_user_reg == 0)
                 $this->code_active = $this->GenerateCode();
-            if($this->send_mail == 1)
-                $this->SendMail();
+            //if($this->send_mail == 1)
+            $this->SendMailUser();
 	    }
 
 	    return parent::beforeSave();
@@ -213,17 +213,21 @@ class Users extends CActiveRecord
         return $new_list_users;
     }
 
-    public function SendMail()
+    public function SendMailUser()
     {
         $email = Yii::app()->email;
         
-        $email->from = 'admin@мобиль36.рф';
+        $email->from = Controller::getOptions('admin_email');
         $email->language = "ru";
-        $email->contentType = 'utf8';
-        $email->to = $this->email;
-        $email->subject = 'Регистрация на сайте мобиль36.рф';
+        //$email->contentType = 'utf8';
+        $email->to = Controller::getOptions('admin_email');
+        $email->subject = 'Свадьба Воронеж';
         $email->view = 'regUser';
-        $email->viewVars = array('login'=>$this->login,'phone'=>$this->phone);
+        $email->viewVars = array('login'=>$this->login,
+                                 'phone'=>$this->phone,
+                                 'name'=>$this->name,
+                                 'password'=>$this->password,
+                            );
         $email->send();
     }
 }

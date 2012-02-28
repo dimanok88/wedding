@@ -55,7 +55,7 @@
 
     <div class="row">
 		<?php echo $form->labelEx($model,'dogovor'); ?>
-		<?php echo $form->checkBox($model,'dogovor'); ?>
+		<?php echo $form->checkBox($model,'dogovor', array('value'=>1, 'uncheckValue'=>'')); ?>
 		<?php echo $form->error($model,'dogovor'); ?>
 	</div>
 
