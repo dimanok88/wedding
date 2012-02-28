@@ -48,14 +48,14 @@ class Pages extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, text, active', 'required'),
-			array('active, category', 'numerical', 'integerOnly'=>true),
+			array('active, category, id_item', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>50),
             array('type', 'default'),
 			array('keywords, description', 'length', 'max'=>160),
 			array('meta_title', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, text, keywords, description, category, type, meta_title, active', 'safe', 'on'=>'search'),
+			array('id, title, text, keywords, id_item, description, category, type, meta_title, active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,6 +84,7 @@ class Pages extends CActiveRecord
 			'description' => 'Описание',
 			'meta_title' => 'Мета заголовок',
 			'active' => 'Вкл.',
+            'id_item' => 'Договор для контента',
 		);
 	}
 

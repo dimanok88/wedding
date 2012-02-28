@@ -54,7 +54,8 @@
 	</div>
 
     <div class="row">
-		<?php echo $form->labelEx($model,'dogovor'); ?>
+		<?php echo CHtml::link('Условия бронирования', '#',
+                               array('onClick'=>'window.open("'.(CController::createUrl('pages/dogovor', array('type'=>$type))).'", "dogovor", "width=600,height=420,scrollbars=yes"); return false;')); ?>
 		<?php echo $form->checkBox($model,'dogovor', array('value'=>1, 'uncheckValue'=>'')); ?>
 		<?php echo $form->error($model,'dogovor'); ?>
 	</div>

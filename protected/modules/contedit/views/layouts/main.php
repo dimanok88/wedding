@@ -33,6 +33,7 @@
                     'items'=>array(
                          array('label' => 'Тип контента', 'url' => array('typeItem/')),
                          array('label'=>'Страницы', 'url'=>array('pages/index', 'type'=>'page')),
+                         array('label'=>'Договора', 'url'=>array('pages/index', 'type'=>'dogovor')),
                          array('label'=>'Новости', 'url'=>array('pages/index', 'type'=>'news')),
                      ),
                 ),

@@ -37,6 +37,14 @@
 	</div>
     <? } ?>
 
+    <?if(isset($_GET['type']) && $_GET['type'] == 'dogovor'){ ?>
+    <div class="row">
+		<?php echo $form->labelEx($model,'id_item'); ?>
+		<?php echo $form->DropDownList($model,'id_item', TypeItem::model()->AllTypeItem()); ?>
+		<?php echo $form->error($model,'id_item'); ?>
+	</div>
+    <? } ?>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'keywords'); ?>
 		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>160)); ?>

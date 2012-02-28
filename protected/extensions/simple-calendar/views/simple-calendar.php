@@ -23,20 +23,22 @@
             <?php if(!$daysStarted) $daysStarted = ($i == $this->firstDayOfTheWeek-1); ?>
             <td <?php
                 $date = $this->year.".".$this->month.".".$day;
-                $d = CDateTimeParser::parse($date,'yyyy.M.dd');
+                $d = CDateTimeParser::parse($date,'yyyy.M.d');
+                //$d = $this->getTimestamp();
                 $class = '';
                 $class_d = '';
                 $key = array_search($d, Orders::model()->dateBrony($_GET['id_item']));
-                $key_succ = array_search($d, Orders::model()->dateSucc($_GET['id_item']));
-                    //echo $key;
+                $key_succ = array_search($d, Orders::model()->dateSucc($_GET['id_item']));                    
                 if(empty($key)) $class = 'date_free';
                 elseif(!empty($key_succ)) $class = 'date_succ';
-                else $class = 'date_brony';
+                elseif(empty($key_succ)  && !empty($key)) $class = 'date_brony';
                 if($day == $this->day) $class_d = 'calendar-selected-day';
                 echo "class='".$class." ".$class_d."'";
                 ?>>
                 <?php if($daysStarted && $day <= $this->daysInCurrentMonth): ?>
-                    <?php echo CHtml::link($day, $this->getDayLink($day)); ?>
+                		
+                    <?php                    
+                     echo CHtml::link($day, $this->getDayLink($day)); ?>
                     <? $day++; ?>
                 <?php endif; ?>
             </td>

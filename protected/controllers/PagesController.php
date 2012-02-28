@@ -17,4 +17,11 @@ class PagesController extends Controller
 
         $this->render('article', array('page'=>$art, 'type'=>$type, 'title'=>$title));
     }
+
+    public function actionDogovor($type)
+    {
+        $art = Pages::model()->find('id_item=:id_i AND type="dogovor"', array(":id_i"=>$type));
+        $this->layout = '//layouts/none';
+        $this->render('dogovor', array('page'=>$art));
+    }
 }

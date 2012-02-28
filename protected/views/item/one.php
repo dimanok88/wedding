@@ -20,7 +20,7 @@ $this->pageKey= $item->meta_keywords;
 
 <?php $this->widget('ext.simple-calendar.SimpleCalendarWidget'); ?>
 
-<?php echo $this->renderPartial('_brony', array('model'=>$model, 'user'=>$user)); ?>
+<?php echo $this->renderPartial('_brony', array('model'=>$model, 'user'=>$user, 'type'=>$item->type)); ?>
 
 <?php echo $this->renderPartial('_comment_form', array('comment'=>$comment)); ?>
 
