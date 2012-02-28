@@ -34,7 +34,24 @@
 		<div class="top">
 			<div class="in">
 				<div class="fll round_4"><a href="#">В избранное</a></div>
-				<div class="flr round_4"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/resources/images/other/share.png" alt="0" style="margin: 0 0 -4px" /></a></div>
+				<div class="flr round_4"><script type="text/javascript" src="http://ucozua.ru/js/podelis.js" charset="utf-8"></script>
+<script type="text/javascript">
+new Ya.share({
+  'element': 'ya_share1',
+  'elementStyle': {
+  'type': 'button',
+  'linkIcon': true,
+  'border': false,
+  'quickServices': ['yaru', 'vkontakte', 'facebook', 'twitter', 'odnoklassniki', 'friendfeed', 'moimir', 'lj']
+  },
+  'popupStyle': {
+  'copyPasteField': true
+  }
+});
+</script>
+<span id="ya_share1"></span>
+<g:plusone size="small" annotation='none'></g:plusone>
+                </div>
                 <div class="back_phone_top"><? $this->renderPartial('application.views.site.backPhone', array('model'=>BackPhone::model()), false, true)?></div>
 			</div>
 		</div>
@@ -105,5 +122,16 @@
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/resources/js/slider.js" type="text/javascript"></script>
 <!-- end SCRIPTS-->
+
+<!-- Поместите этот вызов функции отображения в соответствующее место. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
 </body>
 </html>

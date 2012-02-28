@@ -15,11 +15,11 @@ body {font: 11px/13px Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif; color:#00
 a {outline: none; color: #000}
 a:hover {text-decoration: none}
 
-.back_phone_top { margin: 10px 0 0 0; position: absolute; width: 100%; font-size: 14px; font-weight: bold;}
+.back_phone_top { margin: 10px 0 0 0; position: absolute; z-index: 1; width: 100%; font-size: 14px; font-weight: bold;}
 
 .row {overflow: hidden}
 .fll {float: left; display: inline}
-.flr {float: right; display: inline}
+.flr {float: right; display: inline; position:  relative; z-index: 10;}
 .t_center {text-align: center}
 .t_right{text-align: right}
 
@@ -61,7 +61,7 @@ h1, .left-block ul li a {-moz-border-radius: 8px; -webkit-border-radius: 8px; bo
 .header .top a {color: #0a273f}
 .header .top .fll, .header .top .flr {background: #f2f8fb}
 .header .top .fll {margin: 9px 0 0 19px; padding: 8px 16px 8px 14px}
-.header .top .flr {margin: 9px 46px 0 0; padding: 5px 8px 7px 9px}
+.header .top .flr {margin: 2px 46px 0 0; padding: 5px 8px 7px 9px}
 
 .header .mid {width: 100%; position: relative; padding: 45px 0 0}
 
