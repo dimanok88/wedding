@@ -31,7 +31,7 @@ h1,
 
 h1 {font-size: 20px; line-height: 41px; background: #d3e5ea; padding: 0 0 0 17px; position: relative; margin: 0 0 39px}
 h1 .img {position: absolute; right: -30px; top: -37px; width: 100px; height: 102px; background: url(../resources/images/slider-disc.png) no-repeat 0 -102px; text-align: center}
-h1 .date {position: absolute; right: 35px; top: 0px; width: 100px; text-align: center}
+h1 .date {position: absolute; right: 35px; top: 0px; width: 150px; text-align: center}
 h1 .img img {margin: 17px 0 0}
 
 .round_4, 
