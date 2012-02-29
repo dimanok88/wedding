@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="090a342a-ed3a-4443-af99-8128a04bae58" name="vff" comment="different">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/catalog/3.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/extensions/simple-calendar/css/simple-calendar.css" afterPath="$PROJECT_DIR$/protected/extensions/simple-calendar/css/simple-calendar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/extensions/simple-calendar/views/simple-calendar.php" afterPath="$PROJECT_DIR$/protected/extensions/simple-calendar/views/simple-calendar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Orders.php" afterPath="$PROJECT_DIR$/protected/models/Orders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Users.php" afterPath="$PROJECT_DIR$/protected/models/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/item/_brony.php" afterPath="$PROJECT_DIR$/protected/views/item/_brony.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/extensions/email/Email.php" afterPath="$PROJECT_DIR$/protected/extensions/email/Email.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,25 +42,25 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="6445" selection-end="6445" vertical-scroll-proportion="0.0">
+            <state line="68" column="36" selection-start="3043" selection-end="3043" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simple-calendar.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/extensions/simple-calendar/css/simple-calendar.css">
+      <file leaf-file-name="Email.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/extensions/email/Email.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="41" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
+            <state line="58" column="4" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.55078125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_brony.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_brony.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/item/_brony.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="36" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.8266129">
+            <state line="41" column="36" selection-start="1241" selection-end="1241" vertical-scroll-proportion="-25.625">
               <folding>
                 <marker date="1330522392000" expanded="true" signature="765:801" placeholder="..." />
                 <marker date="1330522392000" expanded="true" signature="765:801" placeholder="..." />
@@ -151,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/contedit/views/users/update.php" />
         <option value="$PROJECT_DIR$/protected/modules/contedit/controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/protected/modules/contedit/views/orders/admin.php" />
         <option value="$PROJECT_DIR$/protected/components/Controller.php" />
@@ -159,7 +155,6 @@
         <option value="$PROJECT_DIR$/protected/controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/protected/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/protected/views/item/index.php" />
         <option value="$PROJECT_DIR$/protected/views/item/one.php" />
         <option value="$PROJECT_DIR$/protected/extensions/simple-calendar/views/simple-calendar.php" />
@@ -167,6 +162,8 @@
         <option value="$PROJECT_DIR$/protected/models/Orders.php" />
         <option value="$PROJECT_DIR$/protected/models/Users.php" />
         <option value="$PROJECT_DIR$/protected/views/item/_brony.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/protected/extensions/email/Email.php" />
       </list>
     </option>
   </component>
@@ -225,7 +222,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catalog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -240,54 +277,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="item" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -580,6 +569,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="extensions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extensions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="email" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -890,13 +901,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="44" selection-start="711" selection-end="711" vertical-scroll-proportion="0.54375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="145" column="0" selection-start="5027" selection-end="5027" vertical-scroll-proportion="-28.041666">
@@ -921,13 +925,6 @@
     <entry file="file://$PROJECT_DIR$/protected/extensions/simple-calendar/views/simple-calendar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="6" selection-start="2623" selection-end="2623" vertical-scroll-proportion="-30.291666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="6445" selection-end="6445" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -997,7 +994,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/item/_brony.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="36" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.8266129">
+        <state line="41" column="36" selection-start="1241" selection-end="1241" vertical-scroll-proportion="-25.625">
           <folding>
             <marker date="1330522392000" expanded="true" signature="765:801" placeholder="..." />
             <marker date="1330522392000" expanded="true" signature="765:801" placeholder="..." />
@@ -1012,6 +1009,20 @@
             <marker date="1330522392000" expanded="true" signature="1983:2009" placeholder="..." />
             <marker date="1330522392000" expanded="true" signature="1983:2009" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="36" selection-start="3043" selection-end="3043" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/extensions/email/Email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="4" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.55078125">
+          <folding />
         </state>
       </provider>
     </entry>

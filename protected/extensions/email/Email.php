@@ -66,7 +66,7 @@ class Email extends CApplicationComponent {
 	/**
 	 * @var string language to encode the message in (eg "Japanese", "ja", "English", "en" and "uni" (UTF-8))
 	 */
-	public $language= 'uni';
+	public $language= 'ru';
 	
 	/**
 	 * @var string the content-type of the email
