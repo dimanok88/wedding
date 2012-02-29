@@ -2,8 +2,11 @@
 $this->title= $item->meta_title;
 $this->pageDesc= $item->meta_desc;
 $this->pageKey= $item->meta_keywords;
+
+$h = " р.";
+if($item->type == '1') $h = " р./ч.";
 ?>
-<h1><?= $item->name; ?></h1>
+<h1><?= $item->name; ?><span class="date"><b><?= $item->price.$h?></b></span></h1>
 
     <?= Pictures::model()->AllPic($item->id)?>
 
@@ -18,13 +21,15 @@ $this->pageKey= $item->meta_keywords;
         </div>
     <?php endif; ?>
 
-<?php $this->widget('ext.simple-calendar.SimpleCalendarWidget'); ?>
+<? if($item->type != '3') {?>
+    <?php $this->widget('ext.simple-calendar.SimpleCalendarWidget'); ?>
+    <?php echo $this->renderPartial('_brony', array('model'=>$model, 'user'=>$user, 'type'=>$item->type)); ?>
+<?
+}
+?>
+    <?php echo $this->renderPartial('_comment_form', array('comment'=>$comment)); ?>
+    <?php $this->commentsList($item->id); ?>
 
-<?php echo $this->renderPartial('_brony', array('model'=>$model, 'user'=>$user, 'type'=>$item->type)); ?>
-
-<?php echo $this->renderPartial('_comment_form', array('comment'=>$comment)); ?>
-
-<?php $this->commentsList($item->id); ?>
 <?
 //CVarDumper::dump(Orders::model()->dateBrony($item->id));
 

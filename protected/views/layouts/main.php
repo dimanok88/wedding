@@ -29,8 +29,11 @@
 </head>
 <body>
 <div class="wrapper">
-	<!-- start HEADER -->
+<!-- start HEADER -->
+    
 	<div class="header">
+
+        <?php if($this->beginCache('header')) { ?>
 		<div class="top">
 			<div class="in">
 				<div class="fll round_4"><a href="#">В избранное</a></div>
@@ -65,7 +68,8 @@ new Ya.share({
 				</div>	
 			</div></div>
 		</div>
-		
+        <?php $this->endCache(); } ?>
+
 		<div class="bot_place">
 			<div class="row bot"><div class="side_l"><div class="side_r">
 				<div class="in">
@@ -82,6 +86,8 @@ new Ya.share({
 		
 	</div>
 	<!-- end HEADER -->
+
+
 	<div class="container">
 		<div class="side_l"><div class="side_r">
 			<div class="out">
@@ -105,6 +111,8 @@ new Ya.share({
 	</div>
 	<div class="down"></div>
 </div>
+
+<?php if($this->beginCache('footer')) { ?>
 <!-- start FOOTER -->
 <div class="footer">
 	<div class="in">
@@ -133,5 +141,8 @@ new Ya.share({
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
+<?php $this->endCache(); } ?>
+
+
 </body>
 </html>

@@ -110,7 +110,7 @@ h1, .left-block ul li a {-moz-border-radius: 8px; -webkit-border-radius: 8px; bo
 .content .item {margin: 0 51px 45px 7px; position: relative; min-height: 97px}
 .content .item .t_center img {margin: 0 0 -2px}
 .content .item .name {padding: 0 7px 20px 0; height: 20px; position: relative}
-.content .item .name a {display: block; width: 283px; height: 20px; background: url(../resources/images/name.png) no-repeat 0 0; color: #fbe5e8; text-decoration: none; font-size: 12px; line-height: 18px; text-align: center; float: right; display: inline}
+.content .item .name a {display: block; width: 283px; height: 20px; background: url(../resources/images/name.png) no-repeat 0 0; color: #000; text-decoration: none; font-size: 12px; line-height: 18px; text-align: center; float: right; display: inline; font-weight: bold;}
 .content .item .name a:hover {background-position: 0 -20px}
 .content .item .name b {position: absolute; right: 165px; top: 27px; width: 165px; height: 16px; background: url(../resources/images/name-line.png) no-repeat 0 0}
 .content .item .tel {position: absolute; right: 15px; top: 32px; color: #2c4861; font-size: 20px; line-height: 20px; text-align: right}

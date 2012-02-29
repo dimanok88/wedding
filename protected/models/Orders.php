@@ -113,10 +113,12 @@ class Orders extends CActiveRecord
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
         if (Yii::app()->user->checkAccess('moderator') && !Yii::app()->user->checkAccess('admin')) {
-            $criteria->compare('id_item',Yii::app()->user->content);
+            $id_item = explode(',', Yii::app()->user->content);
+            $criteria->addInCondition('id_item', $id_item);
+            //$criteria->compare('id_item',);
         }
-        else $criteria->compare('id_item',$this->id_item);
 
+        $criteria->compare('id_item',$this->id_item);
         $criteria->compare('date_brony',$this->date_brony,true);
         $criteria->compare('date_brony_end',$this->date_brony_end,true);
         $criteria->compare('total_hours',$this->total_hours);
@@ -179,7 +181,7 @@ class Orders extends CActiveRecord
 
         $email->from = Controller::getOptions('admin_email');
         $email->language = "ru";
-        //$email->contentType = 'utf8';
+        $email->contentType = 'windows-1251';
         $email->to = Controller::getOptions('admin_email');
         $email->subject = 'Бронирование';
         $email->view = 'mail_brony';

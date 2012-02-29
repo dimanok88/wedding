@@ -83,6 +83,6 @@ class Controller extends CController
     public function getOptions($name)
 	{
 		$options = Options::model()->find('sys_name=:name', array(':name'=>$name));
-		return $options->value;
+		return $options['value'];
 	}
 }

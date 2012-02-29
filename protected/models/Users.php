@@ -53,6 +53,7 @@ class Users extends CActiveRecord
             //if($this->send_mail == 1)
             $this->SendMailUser();
 	    }
+        $this->content_id = implode(',', $this->content_id);
 
 	    return parent::beforeSave();
 	}
@@ -72,14 +73,14 @@ class Users extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('login, password, email, name, role, phone', 'required'),
-			array('active, id_user_reg, send_mail, content_id', 'numerical', 'integerOnly'=>true),
+			array('active, id_user_reg, send_mail', 'numerical', 'integerOnly'=>true),
             array('login, email, code_active, phone', 'unique'),
 			array('login, name', 'length', 'max'=>30),
 			array('password', 'length', 'max'=>60),
             array('password_req', 'length', 'max'=>60),
 			array('password_req', 'compare', 'compareAttribute' => 'password'),
 			array('email', 'length', 'max'=>40),
-            array('organization, address pay,phone', 'default'),
+            array('organization, address pay,phone, content_id', 'default'),
 			array('role', 'length', 'max'=>15),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -196,6 +197,7 @@ class Users extends CActiveRecord
 
     public function getDate($time,$short=false)
     {
+        if(!is_numeric($time)) $time = CDateTimeParser::parse($time,'yyyy-MM-dd hh:mm:ss');
         if($short == true) $time = date('Y.m.d', $time);
         else $time = date('Y-m-d H:i:s', $time);
         
@@ -219,7 +221,7 @@ class Users extends CActiveRecord
         
         $email->from = Controller::getOptions('admin_email');
         $email->language = "ru";
-        //$email->contentType = 'utf8';
+        $email->contentType = 'windows-1251';
         $email->to = Controller::getOptions('admin_email');
         $email->subject = 'Свадьба Воронеж';
         $email->view = 'regUser';

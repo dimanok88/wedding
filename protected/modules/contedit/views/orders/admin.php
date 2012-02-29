@@ -20,10 +20,12 @@ $this->menu=array(
         'id',
 		'id_user'=>array(
             'name'=>'id_user',
+            'filter'=>Users::model()->AllUsers(),
             'value'=>'Users::model()->getName($data->id_user)',
         ),
 		'id_item'=>array(
             'name'=>'id_item',
+            'filter'=>Item::model()->AllItems(),
             'value'=>'Item::model()->getItem($data->id_item)',
         ),
         'date_brony'=>array(

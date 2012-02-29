@@ -38,7 +38,7 @@
                 <?php if($daysStarted && $day <= $this->daysInCurrentMonth): ?>
                 		
                     <?php                    
-                     echo CHtml::link($day, $this->getDayLink($day)); ?>
+                     echo $day; ?>
                     <? $day++; ?>
                 <?php endif; ?>
             </td>

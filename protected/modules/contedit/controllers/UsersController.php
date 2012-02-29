@@ -43,7 +43,10 @@ class UsersController extends ContController {
 
         $url = Yii::app()->user->getState('url_get');
 
-        if(!empty($id)) $model = Users::model()->findByPk($id);
+        if(!empty($id)) {
+            $model = Users::model()->findByPk($id);
+            $model->content_id = explode(',', $model->content_id);
+        }
 
         if(isset($_POST['Users']))
         {
