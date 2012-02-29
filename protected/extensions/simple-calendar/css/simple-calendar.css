@@ -1,3 +1,4 @@
+#calendar_desc { width: 300px; float: right; margin: 180px -7px 0 0;}
 #calendar { width: 300px; right: 30px;}
 #calendar th, #calendar td{
     text-align: center;
@@ -13,6 +14,6 @@
 #calendar .calendar-selected-day {
     font-weight: bold;
 }
-#calendar .date_free { background: #ccffcc;}
-#calendar .date_succ { background: #ff9999;}
-#calendar .date_brony { background-color: #D3E5EA;}
+.date_free { background: #ccffcc;}
+.date_succ { background: #ff9999;}
+.date_brony { background-color: #D3E5EA;}

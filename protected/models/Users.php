@@ -53,7 +53,7 @@ class Users extends CActiveRecord
             //if($this->send_mail == 1)
             $this->SendMailUser();
 	    }
-        $this->content_id = implode(',', $this->content_id);
+        if(!empty($this->content_id)) $this->content_id = implode(',', $this->content_id);
 
 	    return parent::beforeSave();
 	}

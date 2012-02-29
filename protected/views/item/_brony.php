@@ -13,16 +13,28 @@
              'name'=>'date_brony',
              'options'=>array(
                'stepMinute'=> 10,
+                //'showHour'=>false,
+		        //'showMinute'=>false,
+                //'numberOfMonths'=>2,
+	            'minDate'=>0,
+	            //'maxDate'=>90,
              ),
            )); ?>
 		<?php echo $form->error($model,'date_brony'); ?>
 	</div>
 
+    <?if($type == '1'){?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'total_hours'); ?>
 		<?php echo $form->textField($model,'total_hours'); ?>
 		<?php echo $form->error($model,'total_hours'); ?>
 	</div>
+    <?}
+      else{
+         echo CHtml::hiddenField('Orders[total_hours]', '23');
+     }?>
+
+     <? echo CHtml::hiddenField('Orders[type_item]', $type); ?>
 
     <div class="row">
 		<?php echo $form->labelEx($user,'name'); ?>

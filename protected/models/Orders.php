@@ -15,6 +15,7 @@
 class Orders extends CActiveRecord
 {
     public $dogovor;
+    public $type_item;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -39,7 +40,9 @@ class Orders extends CActiveRecord
 	    }
 
         $this->SendMail();
+
         $this->total_price = $this->TotalPrice($this->id_item, $this->total_hours);
+        
         $this->date_brony = CDateTimeParser::parse($this->date_brony,'yyyy-MM-dd hh:mm:ss');
         $this->date_brony_end = $this->date_brony + $this->total_hours*3600;
 
@@ -48,8 +51,10 @@ class Orders extends CActiveRecord
 
     public function beforeValidate()
     {
-        if($this->SuccesTime($this->date_brony, $this->id_item) > 0)
-           $this->addError('date_brony', 'Эта дата и время уже забронированы. Выберите другую дату и время.');
+        if (!Yii::app()->user->checkAccess('moderator') || !Yii::app()->user->checkAccess('admin')) {
+            if($this->SuccesTime($this->date_brony, $this->id_item) > 0)
+                $this->addError('date_brony', 'Эта дата и время уже забронированы. Выберите другую дату и время.');
+        }
         return parent::beforeValidate();
     }
 	/**
@@ -62,11 +67,11 @@ class Orders extends CActiveRecord
 		return array(
 			array('id_user, id_item, total_hours, date_brony, dogovor', 'required'),
 			array('id_user, id_item, total_hours, date_brony_end, succ_time', 'numerical', 'integerOnly'=>true),
-			array('total_price', 'numerical'),
+			array('total_price, type_item', 'numerical'),
 			//array('date_brony', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_user, date_brony_end,id_item, succ_time, dogovor, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
+			array('id, id_user, date_brony_end, id_item, succ_time, dogovor, date_brony, total_hours, date_add, total_price', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -134,7 +139,8 @@ class Orders extends CActiveRecord
     public function TotalPrice($id_item,$hour)
     {
         $content = Item::model()->findByPk($id_item);
-        $total = $hour * $content['price'];
+        if($content['type'] == '1') $total = $hour * $content['price'];
+        else $total = $content['price'];
 
         return $total;
     }

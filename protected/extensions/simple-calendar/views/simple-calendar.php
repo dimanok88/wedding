@@ -49,3 +49,16 @@
         </tr>
     </tbody>
 </table>
+<div>
+    <table id="calendar_desc">
+        <tr>
+            <td class="date_succ">&nbsp;&nbsp;</td><td>Окончательное бронирование</td>
+        </tr>
+        <tr>
+            <td class="date_free">&nbsp;&nbsp;</td><td>Свободно</td>
+        </tr>
+        <tr>
+            <td class="date_brony">&nbsp;&nbsp;</td><td>Предварительное бронирование</td>
+        </tr>
+    </table>
+</div>
