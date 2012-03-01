@@ -66,7 +66,7 @@ class Email extends CApplicationComponent {
 	/**
 	 * @var string language to encode the message in (eg "Japanese", "ja", "English", "en" and "uni" (UTF-8))
 	 */
-	public $language= 'ru';
+	public $language= 'uni';
 	
 	/**
 	 * @var string the content-type of the email
@@ -136,8 +136,9 @@ class Email extends CApplicationComponent {
 		switch ($this->delivery) {
 			case 'php':
 				$message = wordwrap($message, $this->lineLength);
-				mb_language($this->language);
-				return mb_send_mail($to, $subject, $message, implode("\r\n", $this->createHeaders()));
+				//mb_language($this->language);
+                    
+				return mail($to, $subject, $message, implode("\r\n", $this->createHeaders()));
 			case 'debug':
 				$debug = Yii::app()->controller->renderPartial('email.debug',
 						array_merge(compact('to', 'subject', 'message'), array('headers'=>$this->createHeaders())),
